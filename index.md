@@ -36,9 +36,6 @@ Check out my blog where I share insights and learning on various topics in cyber
 ## Certifications and Courses
 <div>
 <a href="https://drive.google.com/file/d/1-5C9gu6-QMt2hlpQIFIPrdLjMR1OE1rM/view?usp=drive_link" target="_blank">
-    <img src="https://www.coursera.org/account/accomplishments/professional-cert/GW5QR2PQ8DSC" />
-</a>
-</div>
 
 ## Projects
 ### [SOC Automation Project](https://ramigiusz.github.io/projects/2024/10/25/my-first-post.html)
