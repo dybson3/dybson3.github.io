@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Categories
-permalink: /categories/
+title: Blog
+permalink: /blog/
 ---
 
 # Blog Categories
