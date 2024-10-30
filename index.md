@@ -9,7 +9,7 @@ title: Home
 
 Cybersecurity student at the University of Science and Technology in Wrocław, aspiring to become an IT security professional. With a strong foundation in cybersecurity principles actively seeking opportunities to apply skills in real-world environments. Dedicated to continuous learning and skill development to achieve expertise in the IT security field. 
 
-<a href="https://www.linkedin.com/in/ramimatouk"><img src="https://img.shields.io/badge/-LinkedIn-0072b1?&style=for-the-badge&logo=linkedin&logoColor=white" /></a>
+<a href="https://www.linkedin.com/in/bartosz-dybski/"><img src="https://img.shields.io/badge/-LinkedIn-0072b1?&style=for-the-badge&logo=linkedin&logoColor=white" /></a>
 
 Check out my blog where I share insights and learning on various topics in cybersecurity.
 
@@ -19,8 +19,8 @@ Check out my blog where I share insights and learning on various topics in cyber
 
 | Skill                                         | Associated Project         |
 |-----------------------------------------------|----------------------------|
-| SIEM implementation and configuration         | <a href="https://ramigiusz.github.io/projects/2024/10/25/my-first-post.html">SOC Automation Project </a> |
-| SOAR setup and automation	|  <a href="https://ramigiusz.github.io/projects/2024/10/25/my-first-post.html">SOC Automation Project </a> |
+| SIEM implementation and configuration         | <a href="https://github.com/dybson3/SOC-Automation-Lab">SOC Automation Project </a> |
+| SOAR setup and automation	|  <a href="https://github.com/dybson3/SOC-Automation-Lab">SOC Automation Project </a> |
 
 ## Tools
 
@@ -36,11 +36,7 @@ Check out my blog where I share insights and learning on various topics in cyber
 ## Certifications and Courses
 <div>
 <a href="https://drive.google.com/file/d/1-5C9gu6-QMt2hlpQIFIPrdLjMR1OE1rM/view?usp=drive_link" target="_blank">
-    <img src="https://img.shields.io/badge/-Google%20Cybersecurity%20Professional%20Course-4285F4?style=for-the-badge&logo=Google&logoColor=white" />
-</a>
-<a href="https://drive.google.com/file/d/11Bk43G1NSytDsGxesk5mCclaYJYUjEar/view?usp=drive_link" target="_blank">
-    <img src="https://img.shields.io/badge/-SOC%20Level%201%20on%20TryHackMe-007ACC?style=for-the-badge&logo=TryHackMe&logoColor=white" />
-</a>
+    <img src="https://www.coursera.org/account/accomplishments/professional-cert/GW5QR2PQ8DSC" />
 
 </div>
 
