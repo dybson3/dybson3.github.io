@@ -1,0 +1,7 @@
+title: Bartosz Dybski
+description: >
+  Welcome to my website where I share my journey in cybersecurity, record my learnings, and explore various topics.
+baseurl: "" # Leave this empty for user pages
+url: "https://github.com/dybson3" # Your GitHub Pages URL
+theme: jekyll-theme-hacker # You can change the theme later if you like
+
