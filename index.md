@@ -13,7 +13,7 @@ Cybersecurity student at the University of Science and Technology in Wrocław, a
 
 Check out my blog where I share insights and learning on various topics in cybersecurity.
 
-[View Blog](/blog)
+[View Blog](/categories)
 
 ## Skills
 
