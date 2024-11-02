@@ -1,17 +1,17 @@
 ---
 layout: default
-title: Home
+title: Bartosz Dybski
 ---
 
 # About Me
 
 ## Objective
 
-Cybersecurity student at the University of Science and Technology in Wrocław, aspiring to become an IT security professional. With a strong foundation in cybersecurity principles actively seeking opportunities to apply skills in real-world environments. Dedicated to continuous learning and skill development to achieve expertise in the IT security field. 
+Cybersecurity student at the University of Science and Technology in Wrocław, aiming to build a career in IT security. Equipped with solid foundational knowledge, I am eager to apply my skills practically and am committed to ongoing learning to deepen expertise in the field. Dedicated to continuous learning and skill development to achieve expertise in the IT security field. 
 
 <a href="https://www.linkedin.com/in/bartosz-dybski/"><img src="https://img.shields.io/badge/-LinkedIn-0072b1?&style=for-the-badge&logo=linkedin&logoColor=white" /></a>
 
-Check out my blog where I share insights and learning on various topics in cybersecurity.
+Here's my blog where I share insights and learning on various topics in cybersecurity.
 
 [View Blog](/blog)
 
@@ -36,8 +36,12 @@ Check out my blog where I share insights and learning on various topics in cyber
 
 ## Certifications and Courses
 <div>
-<a href="https://drive.google.com/file/d/1-5C9gu6-QMt2hlpQIFIPrdLjMR1OE1rM/view?usp=drive_link" target="_blank">
+<a href="https://www.coursera.org/account/accomplishments/professional-cert/GW5QR2PQ8DSC" target="_blank">
+    <img src="https://img.shields.io/badge/-Google%20Cybersecurity%20Professional%20Course-4285F4?style=for-the-badge&logo=Google&logoColor=white" />
+</a>
+
+</div>
 
 ## Projects
-### [SOC Automation Project](https://ramigiusz.github.io/projects/2024/10/25/my-first-post.html)
+### [SOC Automation Project](https://github.com/dybson3/SOC-Automation-Lab)
 This project demonstrates how to automate common SOC tasks using **Wazuh**, **Shuffle**, and **TheHive** to detect and respond to suspicious activities. It includes workflows for incident detection, alert management, and enriching data through threat intelligence tools.
