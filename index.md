@@ -49,3 +49,6 @@ Here's my blog where I share insights and learning on various topics in cybersec
 ## Projects
 ### [SOC Automation Project](https://github.com/dybson3/SOC-Automation-Lab)
 This project demonstrates how to automate common SOC tasks using **Wazuh**, **Shuffle**, and **TheHive** to detect and respond to suspicious activities. It includes workflows for incident detection, alert management, and enriching data through threat intelligence tools.
+
+### [Active Directory Lab](https://github.com/dybson3/Active-Directory-Lab)
+The Active Directory Lab project is a cybersecurity simulation designed to mimic a typical enterprise environment for security monitoring and incident response training. This setup includes a network of virtual machines—**Kali Linux** for offensive testing, **Windows 10**, **Windows Server** for Active Directory, and **Ubuntu** for hosting the **Splunk** server. Tools like **Splunk**, **Sysmon**, **Hydra**, and **Atomic Red Team** were used to simulate and detect attacks.
