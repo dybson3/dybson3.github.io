@@ -13,7 +13,8 @@ Cybersecurity student at the University of Science and Technology in Wrocław, a
 
 Here's my blog where I share insights and learning on various topics in cybersecurity.
 
-[View Blog](/blog)
+[![Explore My Cybersecurity Blog](https://img.shields.io/badge/Explore%20My%20Cybersecurity%20Blog-4CAF50?style=for-the-badge&logo=medium&logoColor=white)](/blog)
+
 
 
 ## Skills
