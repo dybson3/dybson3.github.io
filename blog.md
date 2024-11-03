@@ -4,11 +4,11 @@ title: Blog
 permalink: /blog/
 ---
 
-# Blog Posts
+# Blog Categories
 
-{% for post in site.posts %}
+{% for category in site.categories %}
+## {{ category[0] | capitalize }}
+{% for post in category[1] %}
 - [{{ post.title }}]({{ post.url }}) - {{ post.date | date: "%B %d, %Y" }}
 {% endfor %}
-
-
-
+{% endfor %}
