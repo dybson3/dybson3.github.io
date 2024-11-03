@@ -4,4 +4,8 @@ description: >
 baseurl: "" # Leave this empty for user pages
 url: "https://github.com/dybson3" # Your GitHub Pages URL
 theme: jekyll-theme-cayman # You can change the theme later if you like
+collections:
+  posts:
+    output: true
+    permalink: /:categories/:title/
 
