@@ -30,7 +30,8 @@ Here's my blog where I share insights and learning on various topics in cybersec
 ## Tools
 
 ### SIEM
-<img src="https://img.shields.io/badge/-Wazuh-0072B1?style=for-the-badge&logo=wazuh&logoColor=white" /> 
+<img src="https://img.shields.io/badge/-Wazuh-0072B1?style=for-the-badge&logo=wazuh&logoColor=white" /> <img src="https://img.shields.io/badge/-Splunk-000000?style=for-the-badge&logo=splunk&logoColor=white" />
+
 
 ### SOAR
 <img src="https://img.shields.io/badge/-Shuffle-FF8000?style=for-the-badge&logo=shuffle&logoColor=white" />
