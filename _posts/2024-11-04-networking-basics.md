@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 title: "Understanding TCP/IP Protocol"
 author: "Bartosz Dybski"
 date: 2024-11-04
