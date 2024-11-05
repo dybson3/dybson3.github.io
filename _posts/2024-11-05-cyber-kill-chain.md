@@ -2,7 +2,7 @@
 layout: default
 title: "Cyber Kill Chain"
 author: "Bartosz Dybski"
-date: 2024-11-04
+date: 2024-11-05
 categories: concepts
 tags: [Concepts, Frameworks]
 ---
