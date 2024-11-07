@@ -2,7 +2,7 @@
 layout: default
 title: "Unified Kill Chain"
 author: "Bartosz Dybski"
-date: 2024-11-05
+date: 2024-11-06
 categories: concepts
 tags: [Concepts, Frameworks]
 ---
