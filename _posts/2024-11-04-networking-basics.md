@@ -85,6 +85,13 @@ The **UDP** protocol allows fast, connectionless communication, ideal for real-t
 
 ---
 
+## How is OSI model compared to TCP/IP model?
+The picture below best describes the TCP/IP model compared to OSI model. TCP/IP model is built from 4 layers and these 4 layers contain the 7 layers from OSI model. See the picture below: 
+
+![obraz](https://github.com/user-attachments/assets/0a184e31-5f91-4a82-9e15-0d3526468b07)
+
+[Source](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.geeksforgeeks.org%2Ftcp-ip-model%2F&psig=AOvVaw3bSzVdsjl2-2ilEmjz6g5q&ust=1732308126415000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCLCK5-Wk7okDFQAAAAAdAAAAABAE)
+
 ## Conclusion
 
 The OSI model and TCP/IP protocols form the backbone of network communication, allowing devices worldwide to connect and exchange information. Understanding these layers provides essential insight into how networks function, equipping you with knowledge for both basic troubleshooting and advanced networking concepts.
