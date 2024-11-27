@@ -3,7 +3,7 @@ layout: default
 title: "Core Windows Processes"
 author: "Bartosz Dybski"
 date: 2024-11-27
-categories: opreating-systems
+categories: operating-systems
 tags: [Windows, Processes, Endpoint]
 ---
 
