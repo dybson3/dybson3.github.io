@@ -6,7 +6,7 @@ permalink: /blog/
 
 # Blog Categories
 
-<div class="categories-grid">
+<div class="categories-list">
     {% for category in site.categories %}
     <a href="/blog/{{ category[0] | downcase }}/" class="category-card">
         <div class="category-content">
@@ -17,16 +17,16 @@ permalink: /blog/
 </div>
 
 <style>
-    /* Ogólny styl kontenera */
-    .categories-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 20px;
+    /* Kontener na kategorie */
+    .categories-list {
         margin: 30px 0;
         padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
     }
 
-    /* Styl każdej karty kategorii */
+    /* Styl karty dla kategorii */
     .category-card {
         text-decoration: none;
         display: block;
@@ -37,19 +37,19 @@ permalink: /blog/
     }
 
     .category-card:hover {
-        transform: scale(1.05);
+        transform: translateX(10px);
         box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
         border-color: #007acc;
     }
 
     /* Zawartość karty */
     .category-content {
-        padding: 15px;
-        text-align: center;
+        padding: 15px 20px;
+        text-align: left;
     }
 
     .category-name {
-        font-size: 1.2em;
+        font-size: 1.3em;
         font-weight: bold;
         color: #333333;
         text-transform: uppercase;
