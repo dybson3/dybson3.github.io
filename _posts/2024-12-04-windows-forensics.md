@@ -1,4 +1,3 @@
-
 ---
 layout: default
 title: "Windows Forensics 1"
