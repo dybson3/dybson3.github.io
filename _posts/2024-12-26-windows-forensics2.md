@@ -2,7 +2,7 @@
 layout: default
 title: "Windows Forensics 2"
 author: "Bartosz Dybski"
-date: 2024-12-26
+date: 2024-12-25
 categories: operating-systems
 tags: [Windows, Forensics, Endpoint]
 ---
