@@ -30,33 +30,34 @@ permalink: /blog/
     .category-card {
         text-decoration: none;
         display: block;
-        border: 2px solid #e0e0e0;
-        border-radius: 10px;
-        background: linear-gradient(135deg, #f3f3f3, #ffffff);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.03);
+        transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
     }
 
     .category-card:hover {
         transform: translateX(10px);
-        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-        border-color: #007acc;
+        background: rgba(255, 255, 255, 0.05);
+        border-color: #38bdf8;
     }
 
     /* Zawartość karty */
     .category-content {
-        padding: 15px 20px;
+        padding: 20px 25px;
         text-align: left;
     }
 
     .category-name {
         font-size: 1.3em;
-        font-weight: bold;
-        color: #333333;
+        font-weight: 600;
+        color: #e2e8f0;
         text-transform: uppercase;
+        letter-spacing: 1px;
         transition: color 0.3s ease;
     }
 
     .category-card:hover .category-name {
-        color: #007acc;
+        color: #38bdf8;
     }
 </style>

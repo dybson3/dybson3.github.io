@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title | default: site.title }} | Bartosz Dybski</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+    <div class="background-effects">
+        <div class="glow glow-1"></div>
+        <div class="glow glow-2"></div>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-brand"><a href="{{ '/' | relative_url }}" style="color: inherit; text-decoration: none;">BD.</a></div>
+        <div class="nav-links">
+            <a href="{{ '/' | relative_url }}#about" class="nav-link">About</a>
+            <a href="{{ '/' | relative_url }}#experience" class="nav-link">Experience</a>
+            <a href="{{ '/' | relative_url }}#projects" class="nav-link">Projects</a>
+            <a href="{{ '/blog/' | relative_url }}" class="nav-btn primary-btn"><i class="fas fa-book"></i> Read My Blog</a>
+        </div>
+    </nav>
+
+    <main class="container page-content glass-panel" style="padding: 2rem; margin-top: 2rem; margin-bottom: 2rem;">
+        {{ content }}
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Bartosz Dybski. Designed for Security.</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.glass-panel').forEach(panel => {
+            panel.addEventListener('mousemove', e => {
+                const rect = panel.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                panel.style.setProperty('--mouse-x', `${x}px`);
+                panel.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+    </script>
+</body>
+</html>

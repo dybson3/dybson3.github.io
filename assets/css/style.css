@@ -605,3 +605,85 @@ footer {
         font-size: 1.5rem;
     }
 }
+
+/* Markdown Content Styling for Blog */
+.page-content h1, .page-content h2, .page-content h3, .page-content h4 {
+    color: var(--text-primary);
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    font-weight: 600;
+}
+
+.page-content h1 { font-size: 2.2rem; }
+.page-content h2 { font-size: 1.8rem; border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding-bottom: 0.3em; }
+.page-content h3 { font-size: 1.4rem; }
+
+.page-content p {
+    margin-bottom: 1.2em;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+.page-content a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.page-content a:hover {
+    color: var(--accent-color-hover);
+    text-decoration: underline;
+}
+
+.page-content ul, .page-content ol {
+    margin-bottom: 1.2em;
+    padding-left: 20px;
+    color: var(--text-secondary);
+}
+
+.page-content li {
+    margin-bottom: 0.5em;
+}
+
+.page-content pre {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow-x: auto;
+    margin-bottom: 1.5em;
+}
+
+.page-content code {
+    font-family: 'Fira Code', monospace;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    color: #e2e8f0;
+}
+
+.page-content pre code {
+    background: none;
+    padding: 0;
+    color: #a0aec0;
+}
+
+.page-content img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin: 1.5em 0;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.page-content blockquote {
+    border-left: 4px solid var(--accent-color);
+    padding-left: 15px;
+    margin: 1.5em 0;
+    color: #cbd5e1;
+    font-style: italic;
+    background: rgba(255, 255, 255, 0.02);
+    padding: 15px 15px 15px 20px;
+    border-radius: 0 8px 8px 0;
+}
+
