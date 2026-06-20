@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socials | Bartosz Dybski</title>
+    <meta name="description" content="Connect with Bartosz Dybski on YouTube, Instagram, TikTok, and more.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .socials-container {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        .profile-img-container {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 1.5rem;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent-color) 0%, #818cf8 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #000;
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.5);
+        }
+        .link-tree-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .link-tree-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--accent-color);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        .link-tree-btn i {
+            font-size: 1.3rem;
+            color: var(--accent-color);
+        }
+        .link-tree-btn.highlight-btn {
+            background: rgba(56, 189, 248, 0.1);
+            border-color: var(--accent-color);
+        }
+        .link-tree-btn.highlight-btn:hover {
+            background: var(--accent-color);
+            color: #000;
+            box-shadow: 0 0 20px var(--accent-glow);
+        }
+        .link-tree-btn.highlight-btn:hover i {
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-effects">
+        <div class="glow glow-1"></div>
+        <div class="glow glow-2"></div>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-brand">BD.</div>
+        <div class="nav-links">
+            <a href="index.html#about" class="nav-link">About</a>
+            <a href="index.html#experience" class="nav-link">Experience</a>
+            <a href="index.html#projects" class="nav-link">Projects</a>
+            <a href="socials.html" class="nav-link" style="color: var(--text-primary);">Socials</a>
+            <a href="/blog" class="nav-btn primary-btn"><i class="fas fa-book"></i> Read My Blog</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="socials-container">
+            <div class="profile-img-container">
+                <i class="fas fa-user-astronaut"></i>
+            </div>
+            <h1 class="name" style="font-size: 2.5rem; margin-bottom: 0.5rem;">Bartosz Dybski</h1>
+            <p class="role" style="font-size: 1.2rem; margin-bottom: 2rem;">Cybersecurity & Influencer</p>
+
+            <a href="https://www.youtube.com/@dybson3" target="_blank" class="link-tree-btn">
+                <i class="fab fa-youtube" style="color: #ff0000;"></i> YouTube
+            </a>
+            
+            <a href="https://www.instagram.com/dybson_cybersecurity/" target="_blank" class="link-tree-btn">
+                <i class="fab fa-instagram" style="color: #e1306c;"></i> Instagram
+            </a>
+
+            <a href="https://www.tiktok.com/@dybson3" target="_blank" class="link-tree-btn">
+                <i class="fab fa-tiktok" style="color: #00f2fe;"></i> TikTok
+            </a>
+            
+            <a href="https://linktr.ee/dybson_cybersecurity" target="_blank" class="link-tree-btn">
+                <i class="fas fa-link"></i> Linktree
+            </a>
+
+            <a href="https://www.linkedin.com/in/bartosz-dybski/" target="_blank" class="link-tree-btn">
+                <i class="fab fa-linkedin-in" style="color: #0077b5;"></i> LinkedIn
+            </a>
+
+            <div class="divider" style="margin: 2rem 0;"></div>
+
+            <a href="resources.html" class="link-tree-btn highlight-btn">
+                <i class="fas fa-shield-alt"></i> Cybersecurity Resources
+            </a>
+            
+            <a href="index.html" class="link-tree-btn">
+                <i class="fas fa-arrow-left"></i> Back to CV
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Bartosz Dybski. Designed for Security.</p>
+    </footer>
+</body>
+</html>

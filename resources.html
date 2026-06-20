@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity Resources | Bartosz Dybski</title>
+    <meta name="description" content="Curated cybersecurity resources, tools, and learning materials.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .resources-header {
+            text-align: center;
+            margin: 3rem 0;
+        }
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        .resource-card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .resource-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 1rem;
+            flex-grow: 1;
+        }
+        .resource-list li {
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .resource-list li:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        .resource-link {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            transition: color 0.3s ease;
+        }
+        .resource-link:hover {
+            color: var(--accent-color);
+        }
+        .resource-link i {
+            margin-top: 4px;
+            color: var(--accent-color);
+            font-size: 0.9em;
+        }
+        .resource-desc {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-top: 5px;
+            margin-left: 24px;
+            font-weight: 400;
+        }
+        .back-nav {
+            margin-bottom: 2rem;
+        }
+        .back-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        .back-link:hover {
+            color: var(--accent-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="background-effects">
+        <div class="glow glow-1"></div>
+        <div class="glow glow-2"></div>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-brand">BD.</div>
+        <div class="nav-links">
+            <a href="index.html#about" class="nav-link">About</a>
+            <a href="index.html#experience" class="nav-link">Experience</a>
+            <a href="index.html#projects" class="nav-link">Projects</a>
+            <a href="socials.html" class="nav-link">Socials</a>
+            <a href="/blog" class="nav-btn primary-btn"><i class="fas fa-book"></i> Read My Blog</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="back-nav">
+            <a href="socials.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Socials</a>
+        </div>
+
+        <div class="resources-header">
+            <h1 class="name" style="font-size: 3rem;">Cybersecurity <span class="highlight">Resources</span></h1>
+            <p class="summary" style="margin: 1rem auto;">A curated list of tools, articles, and materials for blue teaming, incident response, and general security.</p>
+        </div>
+
+        <div class="resources-grid">
+            <!-- Blue Team & SOC -->
+            <div class="glass-panel section-padding resource-card">
+                <div class="section-header" style="margin-bottom: 1rem;">
+                    <i class="fas fa-shield-virus icon-accent"></i>
+                    <h3>Blue Team & SOC</h3>
+                </div>
+                <ul class="resource-list">
+                    <li>
+                        <a href="#" class="resource-link">
+                            <i class="fas fa-external-link-alt"></i> TryHackMe SOC Level 1
+                            <span class="resource-desc">Great introductory path for Security Operations Center analysts.</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="resource-link">
+                            <i class="fas fa-external-link-alt"></i> Wazuh Documentation
+                            <span class="resource-desc">Official docs for the open-source SIEM and XDR platform.</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="resource-link">
+                            <i class="fas fa-external-link-alt"></i> LetsDefend
+                            <span class="resource-desc">Blue team training platform with real-world scenarios.</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Network Security -->
+            <div class="glass-panel section-padding resource-card">
+                <div class="section-header" style="margin-bottom: 1rem;">
+                    <i class="fas fa-network-wired icon-accent"></i>
+                    <h3>Network Security</h3>
+                </div>
+                <ul class="resource-list">
+                    <li>
+                        <a href="#" class="resource-link">
+                            <i class="fas fa-external-link-alt"></i> Wireshark Tutorial
+                            <span class="resource-desc">Comprehensive guide to analyzing network traffic.</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="resource-link">
+                            <i class="fas fa-external-link-alt"></i> Fortinet NSE Training
+                            <span class="resource-desc">Free network security courses from Fortinet.</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="resource-link">
+                            <i class="fas fa-external-link-alt"></i> Malware Traffic Analysis
+                            <span class="resource-desc">A great source for PCAP files containing malware infections.</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Tools & Cheatsheets -->
+            <div class="glass-panel section-padding resource-card">
+                <div class="section-header" style="margin-bottom: 1rem;">
+                    <i class="fas fa-tools icon-accent"></i>
+                    <h3>Tools & Cheatsheets</h3>
+                </div>
+                <ul class="resource-list">
+                    <li>
+                        <a href="#" class="resource-link">
+                            <i class="fas fa-external-link-alt"></i> GTFOBins
+                            <span class="resource-desc">Curated list of Unix binaries that can be used to bypass local security restrictions.</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="resource-link">
+                            <i class="fas fa-external-link-alt"></i> LOLBAS
+                            <span class="resource-desc">Living Off The Land Binaries, Scripts and Libraries for Windows.</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="resource-link">
+                            <i class="fas fa-external-link-alt"></i> CyberChef
+                            <span class="resource-desc">The Cyber Swiss Army Knife - essential for decoding/encoding data.</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Bartosz Dybski. Designed for Security.</p>
+    </footer>
+
+    <script>
+        // Simple script to add a subtle hover effect to cards based on mouse position
+        document.querySelectorAll('.glass-panel').forEach(panel => {
+            panel.addEventListener('mousemove', e => {
+                const rect = panel.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                panel.style.setProperty('--mouse-x', `${x}px`);
+                panel.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+    </script>
+</body>
+</html>
