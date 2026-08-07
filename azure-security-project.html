@@ -62,13 +62,17 @@
 
                 <h2>Project Overview</h2>
                 <p>This comprehensive cloud security project serves as a practical implementation of the concepts required for the Microsoft SC-500 certification. It focuses on engineering a secure, robust environment within Microsoft Azure by strictly adhering to the <strong>Zero Trust architecture</strong> and the principle of <strong>Least Privilege</strong>. The project demonstrates end-to-end security measures, from establishing passwordless authentication for cloud applications to deploying a centralized SIEM/SOAR solution for proactive threat hunting. Furthermore, it incorporates advanced data protection strategies at the database level and explores the emerging field of AI governance by implementing content safety guardrails for generative AI models.</p>
+                <figure style="text-align: center; margin: 2.5rem 0;">
+                    <img src="assets/images/Diagram%20Architektury.png" alt="Architecture Diagram" style="box-shadow: 0 10px 30px rgba(0,0,0,0.5); display: inline-block;" onerror="this.style.display='none'">
+                    <figcaption style="color: var(--text-secondary); margin-top: 10px; font-size: 0.95rem; font-style: italic;">Figure 1: High-level Architecture Diagram of the entire laboratory environment</figcaption>
+                </figure>
 
                 <h2>Key Architecture Components & Implementations</h2>
 
                 <h3>1. Identity & Access Management (Managed Identities & RBAC)</h3>
                 <p>A core pillar of Zero Trust is strong identity verification. This segment focuses on eliminating hardcoded credentials and strictly controlling resource access.</p>
                 <ul>
-                    <li><strong>App Service Integration:</strong> Configured a System-Assigned Managed Identity for an Azure App Service. This enables secure, seamless, and passwordless authentication to back-end resources without the need to store secrets in code or configuration files.</li>
+                    <li><strong>App Service Integration:</strong> Configured a System-Assigned Managed Identity for an Azure App Service. This enables secure, seamless, and passwordless authentication to back-end resources without the need to store secrets in code or configuration files. As part of this implementation, I developed a custom application featuring AI capabilities that successfully authenticated to Azure Key Vault to read and display a stored secret. Additionally, the application securely connected to a Storage Account to retrieve and display information about a file stored within a private container.</li>
                     <li><strong>Granular Role-Based Access Control (RBAC):</strong> Applied the principle of least privilege to ensure identities only have the permissions necessary for their function.
                         <ul>
                             <li><strong>Storage Account Security:</strong> Assigned the <em>Storage Blob Data Reader</em> role, deliberately scoped at the specific Container level rather than the broader Subscription or Storage Account level, minimizing the potential blast radius of a compromised identity.</li>
@@ -76,7 +80,10 @@
                         </ul>
                     </li>
                 </ul>
-                <img src="assets/images/App%20service%20ID%20proof.png" alt="App Service Execution Evidence" style="box-shadow: 0 10px 30px rgba(0,0,0,0.5);" onerror="this.style.display='none'">
+                <figure style="text-align: center; margin: 2.5rem 0;">
+                    <img src="assets/images/App%20service%20ID%20proof.png" alt="App Service Execution Evidence" style="box-shadow: 0 10px 30px rgba(0,0,0,0.5); display: inline-block;" onerror="this.style.display='none'">
+                    <figcaption style="color: var(--text-secondary); margin-top: 10px; font-size: 0.95rem; font-style: italic;">Figure 2: Execution proof of the App Service successfully fetching secrets and blob data using Managed Identity</figcaption>
+                </figure>
 
                 <h3>2. Security Operations & Auditing (Microsoft Sentinel & SIEM)</h3>
                 <p>Visibility is critical for detecting and responding to threats. This phase implements a centralized security monitoring architecture to track administrative activities and potential unauthorized access attempts.</p>
@@ -85,7 +92,6 @@
                     <li><strong>Microsoft Sentinel Integration:</strong> Deployed and configured Microsoft Sentinel to provide cloud-native Security Information and Event Management (SIEM) and Security Orchestration, Automation, and Response (SOAR) capabilities.</li>
                     <li><strong>Data Connectors & Policy Remediation:</strong> Successfully ingested Azure Activity logs. Utilized Azure Policy remediation tasks to enforce diagnostic settings at scale, ensuring continuous monitoring of control-plane events. This setup is specifically tuned to detect unauthorized RBAC actions, such as unexpected <code>HTTP 403 / AuthorizationFailed</code> errors, indicating potential lateral movement or privilege escalation attempts.</li>
                 </ul>
-                <img src="assets/images/Diagram%20Architektury.png" alt="Architecture Diagram" style="box-shadow: 0 10px 30px rgba(0,0,0,0.5);" onerror="this.style.display='none'">
 
                 <h3>3. Data Protection & Privacy (Azure SQL Database)</h3>
                 <p>Protecting sensitive information at rest and in transit is a key requirement. This component demonstrates how to secure a relational database against unauthorized data exfiltration.</p>
@@ -94,14 +100,25 @@
                     <li><strong>Dynamic Data Masking (DDM):</strong> Implemented native Azure SQL Dynamic Data Masking rules to obfuscate sensitive columns (e.g., credit card numbers, email addresses, personal identifiers) in real-time. This ensures that even users with read access cannot view the plain-text sensitive data unless explicitly authorized.</li>
                     <li><strong>Verification & Testing:</strong> Conducted thorough SQL query testing to confirm that <code>test_user</code> can successfully query the tables for analytical purposes while the DDM engine dynamically masks the sensitive payload, effectively preventing data leakage.</li>
                 </ul>
-                <img src="assets/images/TestUserDynamicDataMasking.png" alt="Dynamic Data Masking Evidence" style="box-shadow: 0 10px 30px rgba(0,0,0,0.5);" onerror="this.style.display='none'">
+                <figure style="text-align: center; margin: 2.5rem 0;">
+                    <img src="assets/images/TestUserDynamicDataMasking.png" alt="Dynamic Data Masking Evidence" style="box-shadow: 0 10px 30px rgba(0,0,0,0.5); display: inline-block;" onerror="this.style.display='none'">
+                    <figcaption style="color: var(--text-secondary); margin-top: 10px; font-size: 0.95rem; font-style: italic;">Figure 3: Azure SQL querying interface showing masked credit card values for the test_user</figcaption>
+                </figure>
 
                 <h3>4. AI Governance & Content Moderation (Azure AI Foundry)</h3>
                 <p>As AI adoption grows, securing AI workflows becomes paramount. This final segment addresses the risks associated with generative AI, such as prompt injection and harmful outputs.</p>
                 <ul>
                     <li><strong>Azure AI Content Safety:</strong> Deployed and configured advanced content safety filters within the Azure AI Foundry platform. This establishes a robust governance layer to automatically detect, monitor, and mitigate harmful, toxic, or malicious inputs (like jailbreak attempts) and outputs in AI-driven applications, ensuring compliance with responsible AI principles.</li>
                 </ul>
-                <img src="assets/images/AIJailbreak.png" alt="Azure AI Content Safety Jailbreak Detection" style="box-shadow: 0 10px 30px rgba(0,0,0,0.5);" onerror="this.style.display='none'">
+                <figure style="text-align: center; margin: 2.5rem 0;">
+                    <img src="assets/images/AIJailbreak.png" alt="Azure AI Content Safety Jailbreak Detection" style="box-shadow: 0 10px 30px rgba(0,0,0,0.5); display: inline-block;" onerror="this.style.display='none'">
+                    <figcaption style="color: var(--text-secondary); margin-top: 10px; font-size: 0.95rem; font-style: italic;">Figure 4: Azure AI Foundry successfully identifying and blocking a jailbreak prompt attack</figcaption>
+                </figure>
+
+                <hr style="border-color: rgba(255,255,255,0.1); margin: 3rem 0;">
+                
+                <h2>Conclusion</h2>
+                <p>Building this practical laboratory environment allowed me to successfully bridge the gap between theory and practice. It provided a hands-on opportunity to implement and validate the theoretical knowledge I acquired while preparing for the <strong>Microsoft SC-500 (Azure Security Engineer)</strong> certification exam, reinforcing my ability to design and deploy robust security controls in a live cloud environment.</p>
             </div>
         </div>
     </main>
