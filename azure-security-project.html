@@ -61,43 +61,47 @@
                 <p><em>SC-500 Portfolio Project</em></p>
 
                 <h2>Project Overview</h2>
-                <p>A cloud security hands-on project demonstrating Zero Trust architecture, Least Privilege access control, threat detection (SIEM), database data protection, and AI safety controls within Microsoft Azure.</p>
+                <p>This comprehensive cloud security project serves as a practical implementation of the concepts required for the Microsoft SC-500 certification. It focuses on engineering a secure, robust environment within Microsoft Azure by strictly adhering to the <strong>Zero Trust architecture</strong> and the principle of <strong>Least Privilege</strong>. The project demonstrates end-to-end security measures, from establishing passwordless authentication for cloud applications to deploying a centralized SIEM/SOAR solution for proactive threat hunting. Furthermore, it incorporates advanced data protection strategies at the database level and explores the emerging field of AI governance by implementing content safety guardrails for generative AI models.</p>
 
                 <h2>Key Architecture Components & Implementations</h2>
 
-                <h3>Identity & Access Management (Managed Identities & RBAC)</h3>
+                <h3>1. Identity & Access Management (Managed Identities & RBAC)</h3>
+                <p>A core pillar of Zero Trust is strong identity verification. This segment focuses on eliminating hardcoded credentials and strictly controlling resource access.</p>
                 <ul>
-                    <li><strong>App Service Integration:</strong> Configured Managed Identity for secure, passwordless authentication to Azure resources.</li>
-                    <li><strong>Least Privilege Access Control:</strong>
+                    <li><strong>App Service Integration:</strong> Configured a System-Assigned Managed Identity for an Azure App Service. This enables secure, seamless, and passwordless authentication to back-end resources without the need to store secrets in code or configuration files.</li>
+                    <li><strong>Granular Role-Based Access Control (RBAC):</strong> Applied the principle of least privilege to ensure identities only have the permissions necessary for their function.
                         <ul>
-                            <li><strong>Storage Account:</strong> Assigned <em>Storage Blob Data Reader</em> role scoped strictly at the Container level (not subscription or account level).</li>
-                            <li><strong>Key Vault:</strong> Assigned <em>Key Vault Secrets Officer</em> role scoped at the Key Vault level to securely read and manage application secrets.</li>
+                            <li><strong>Storage Account Security:</strong> Assigned the <em>Storage Blob Data Reader</em> role, deliberately scoped at the specific Container level rather than the broader Subscription or Storage Account level, minimizing the potential blast radius of a compromised identity.</li>
+                            <li><strong>Azure Key Vault:</strong> Assigned the <em>Key Vault Secrets Officer</em> role exclusively at the Key Vault level, establishing a secure enclave for the application to read and manage cryptographic keys and secrets.</li>
                         </ul>
                     </li>
                 </ul>
-                <img src="assets/images/app-service-execution.png" alt="App Service Execution" onerror="this.style.display='none'">
+                <img src="assets/images/App%20service%20ID%20proof.png" alt="App Service Execution Evidence" style="box-shadow: 0 10px 30px rgba(0,0,0,0.5);" onerror="this.style.display='none'">
 
-                <h3>Security Operations & Auditing (Microsoft Sentinel & SIEM)</h3>
+                <h3>2. Security Operations & Auditing (Microsoft Sentinel & SIEM)</h3>
+                <p>Visibility is critical for detecting and responding to threats. This phase implements a centralized security monitoring architecture to track administrative activities and potential unauthorized access attempts.</p>
                 <ul>
-                    <li><strong>Log Analytics Workspace:</strong> Deployed at the Subscription level as the central logging hub.</li>
-                    <li><strong>Microsoft Sentinel:</strong> Enabled for SIEM/SOAR capabilities.</li>
-                    <li><strong>Data Connectors:</strong> Ingested Azure Activity logs via Azure Policy remediation tasks to monitor control-plane events and detect unauthorized RBAC actions (e.g., HTTP 403 / AuthorizationFailed).</li>
+                    <li><strong>Log Analytics Workspace:</strong> Provisioned a centralized Log Analytics Workspace at the Subscription level to act as the primary data lake for all security and operational logs across the Azure environment.</li>
+                    <li><strong>Microsoft Sentinel Integration:</strong> Deployed and configured Microsoft Sentinel to provide cloud-native Security Information and Event Management (SIEM) and Security Orchestration, Automation, and Response (SOAR) capabilities.</li>
+                    <li><strong>Data Connectors & Policy Remediation:</strong> Successfully ingested Azure Activity logs. Utilized Azure Policy remediation tasks to enforce diagnostic settings at scale, ensuring continuous monitoring of control-plane events. This setup is specifically tuned to detect unauthorized RBAC actions, such as unexpected <code>HTTP 403 / AuthorizationFailed</code> errors, indicating potential lateral movement or privilege escalation attempts.</li>
                 </ul>
-                <img src="assets/images/architecture-diagram.png" alt="Architecture Diagram" onerror="this.style.display='none'">
+                <img src="assets/images/Diagram%20Architektury.png" alt="Architecture Diagram" style="box-shadow: 0 10px 30px rgba(0,0,0,0.5);" onerror="this.style.display='none'">
 
-                <h3>Data Protection & Privacy (Azure SQL Database)</h3>
+                <h3>3. Data Protection & Privacy (Azure SQL Database)</h3>
+                <p>Protecting sensitive information at rest and in transit is a key requirement. This component demonstrates how to secure a relational database against unauthorized data exfiltration.</p>
                 <ul>
-                    <li><strong>Access Scoping:</strong> Provisioned a database user (<code>test_user</code>) mapped via Microsoft Entra ID with read-only access (<code>db_datareader</code>).</li>
-                    <li><strong>Dynamic Data Masking (DDM):</strong> Implemented data masking rules on sensitive columns (e.g., credit card numbers).</li>
-                    <li><strong>Verification:</strong> Confirmed via SQL queries that <code>test_user</code> can read tables but sensitive data remains masked.</li>
+                    <li><strong>Access Scoping & Entra ID Mapping:</strong> Provisioned a dedicated database user (<code>test_user</code>) securely mapped via Microsoft Entra ID. The user was granted strictly read-only access (<code>db_datareader</code>) to prevent unauthorized data modifications.</li>
+                    <li><strong>Dynamic Data Masking (DDM):</strong> Implemented native Azure SQL Dynamic Data Masking rules to obfuscate sensitive columns (e.g., credit card numbers, email addresses, personal identifiers) in real-time. This ensures that even users with read access cannot view the plain-text sensitive data unless explicitly authorized.</li>
+                    <li><strong>Verification & Testing:</strong> Conducted thorough SQL query testing to confirm that <code>test_user</code> can successfully query the tables for analytical purposes while the DDM engine dynamically masks the sensitive payload, effectively preventing data leakage.</li>
                 </ul>
-                <img src="assets/images/ddm-screenshot.png" alt="Dynamic Data Masking" onerror="this.style.display='none'">
+                <img src="assets/images/TestUserDynamicDataMasking.png" alt="Dynamic Data Masking Evidence" style="box-shadow: 0 10px 30px rgba(0,0,0,0.5);" onerror="this.style.display='none'">
 
-                <h3>AI Governance & Content Moderation (Azure AI Foundry)</h3>
+                <h3>4. AI Governance & Content Moderation (Azure AI Foundry)</h3>
+                <p>As AI adoption grows, securing AI workflows becomes paramount. This final segment addresses the risks associated with generative AI, such as prompt injection and harmful outputs.</p>
                 <ul>
-                    <li><strong>Azure AI Content Safety:</strong> Deployed content safety filters within Azure AI Foundry to detect, monitor, and mitigate harmful inputs and outputs in AI workflows.</li>
+                    <li><strong>Azure AI Content Safety:</strong> Deployed and configured advanced content safety filters within the Azure AI Foundry platform. This establishes a robust governance layer to automatically detect, monitor, and mitigate harmful, toxic, or malicious inputs (like jailbreak attempts) and outputs in AI-driven applications, ensuring compliance with responsible AI principles.</li>
                 </ul>
-                <img src="assets/images/ai-content-safety.png" alt="Azure AI Content Safety" onerror="this.style.display='none'">
+                <img src="assets/images/AIJailbreak.png" alt="Azure AI Content Safety Jailbreak Detection" style="box-shadow: 0 10px 30px rgba(0,0,0,0.5);" onerror="this.style.display='none'">
             </div>
         </div>
     </main>
