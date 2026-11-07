@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Bartosz Dybski | Links</title>
+    <meta name="description" content="Cybersecurity content by Bartosz Dybski — YouTube, TikTok, Instagram, LinkedIn and more.">
+    <meta name="theme-color" content="#06070c">
+    <!-- Social preview -->
+    <meta property="og:title" content="Bartosz Dybski — Cybersecurity">
+    <meta property="og:description" content="YouTube · TikTok · Instagram · LinkedIn · Blog">
+    <meta property="og:image" content="https://dybson3.github.io/assets/images/profile.jpg">
+    <meta property="og:url" content="https://dybson3.github.io/links">
+    <meta name="twitter:card" content="summary">
+    <link rel="icon" href="assets/images/profile.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg: #06070c;
+            --card: rgba(255, 255, 255, 0.045);
+            --card-border: rgba(255, 255, 255, 0.09);
+            --text: #f1f5f9;
+            --muted: #94a3b8;
+            --cyan: #38bdf8;
+            --blue: #6366f1;
+            --magenta: #ec4899;
+            --red: #f43f5e;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            min-height: 100vh;
+            min-height: 100dvh;
+            font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        /* Ambient background taken from the photo's neon lighting */
+        .ambient {
+            position: fixed;
+            inset: 0;
+            z-index: -2;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        .ambient .photo-blur {
+            position: absolute;
+            inset: -20%;
+            background: url('assets/images/profile.jpg') center / cover no-repeat;
+            filter: blur(90px) saturate(1.6);
+            opacity: 0.35;
+            transform: scale(1.1);
+        }
+        .ambient .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.35;
+            animation: drift 18s ease-in-out infinite;
+        }
+        .orb.a { width: 420px; height: 420px; background: var(--red); top: -120px; left: -140px; }
+        .orb.b { width: 460px; height: 460px; background: var(--blue); bottom: -160px; right: -160px; animation-delay: -6s; }
+        .orb.c { width: 300px; height: 300px; background: var(--cyan); top: 40%; left: 60%; opacity: 0.18; animation-delay: -12s; }
+        @keyframes drift {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(40px, 30px) scale(1.08); }
+        }
+        .grid {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            pointer-events: none;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 44px 44px;
+            mask-image: radial-gradient(ellipse 70% 55% at 50% 20%, #000 20%, transparent 75%);
+            -webkit-mask-image: radial-gradient(ellipse 70% 55% at 50% 20%, #000 20%, transparent 75%);
+        }
+
+        .wrap {
+            max-width: 480px;
+            margin: 0 auto;
+            padding: 3.2rem 1rem 2.5rem;
+            position: relative;
+        }
+
+        /* Top actions */
+        .top-actions {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            left: 1rem;
+            display: flex;
+            justify-content: space-between;
+        }
+        .icon-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text);
+            text-decoration: none;
+            font-size: 0.95rem;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            transition: background 0.2s, transform 0.2s;
+        }
+        .icon-btn:hover { background: rgba(255, 255, 255, 0.14); transform: scale(1.06); }
+
+        /* Profile */
+        .profile { text-align: center; margin-bottom: 1.8rem; }
+
+        .avatar-ring {
+            width: 132px;
+            height: 132px;
+            margin: 0 auto 1.1rem;
+            border-radius: 50%;
+            padding: 4px;
+            position: relative;
+            background: conic-gradient(from 0deg, var(--red), var(--magenta), var(--blue), var(--cyan), var(--red));
+            animation: spin 6s linear infinite;
+            box-shadow: 0 0 40px -6px rgba(236, 72, 153, 0.55), 0 0 60px -10px rgba(56, 189, 248, 0.5);
+        }
+        .avatar-ring img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+            border: 3px solid var(--bg);
+            animation: spin 6s linear infinite reverse;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .status {
+            position: absolute;
+            bottom: 8px;
+            right: 8px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #22c55e;
+            border: 3px solid var(--bg);
+            animation: spin 6s linear infinite reverse;
+        }
+
+        .name {
+            font-size: 1.75rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .name .verified { color: var(--cyan); font-size: 1.1rem; }
+
+        .handle {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.85rem;
+            color: var(--muted);
+            margin-top: 2px;
+        }
+
+        .bio {
+            margin: 0.9rem auto 0;
+            max-width: 360px;
+            color: #cbd5e1;
+            font-size: 1rem;
+            line-height: 1.55;
+        }
+
+        .chips {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 6px;
+            margin-top: 0.9rem;
+        }
+        .chip {
+            font-size: 0.75rem;
+            font-weight: 500;
+            padding: 4px 10px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #dbe3ee;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .chip i { color: var(--cyan); }
+
+        .social-row {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 1.2rem;
+        }
+        .social-row a {
+            width: 44px;
+            height: 44px;
+            border-radius: 14px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.15rem;
+            color: var(--text);
+            background: var(--card);
+            border: 1px solid var(--card-border);
+            text-decoration: none;
+            transition: transform 0.2s, background 0.2s, border-color 0.2s, color 0.2s;
+        }
+        .social-row a:hover { transform: translateY(-3px); color: #fff; }
+        .social-row a.yt:hover { background: #ff0033; border-color: #ff0033; }
+        .social-row a.tt:hover { background: #111; border-color: #25f4ee; box-shadow: -2px -2px 0 #25f4ee, 2px 2px 0 #fe2c55; }
+        .social-row a.ig:hover { background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5); border-color: transparent; }
+        .social-row a.li:hover { background: #0a66c2; border-color: #0a66c2; }
+        .social-row a.gh:hover { background: #24292f; border-color: #57606a; }
+
+        /* Section labels */
+        .label {
+            font-size: 0.72rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--muted);
+            margin: 1.8rem 0 0.8rem 0.3rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .label::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, rgba(255,255,255,0.12), transparent);
+        }
+
+        /* Link cards */
+        .link {
+            --brand: var(--cyan);
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 14px 16px;
+            margin-bottom: 12px;
+            border-radius: 18px;
+            background: var(--card);
+            border: 1px solid var(--card-border);
+            color: var(--text);
+            text-decoration: none;
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            overflow: hidden;
+            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+        }
+        .link::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(400px circle at var(--mx, 50%) var(--my, 50%), color-mix(in srgb, var(--brand) 18%, transparent), transparent 45%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+        }
+        .link:hover {
+            transform: translateY(-3px) scale(1.01);
+            border-color: color-mix(in srgb, var(--brand) 60%, transparent);
+            box-shadow: 0 14px 34px -14px color-mix(in srgb, var(--brand) 70%, transparent);
+        }
+        .link:hover::before { opacity: 1; }
+        .link:active { transform: scale(0.98); }
+
+        .link-icon {
+            width: 46px;
+            height: 46px;
+            border-radius: 14px;
+            flex-shrink: 0;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            color: #fff;
+            background: var(--brand);
+            position: relative;
+        }
+        .link-body { flex: 1; min-width: 0; position: relative; }
+        .link-title { font-weight: 600; font-size: 1.02rem; }
+        .link-sub {
+            font-size: 0.83rem;
+            color: var(--muted);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .link-arrow {
+            color: var(--muted);
+            font-size: 0.85rem;
+            transition: transform 0.25s, color 0.25s;
+            position: relative;
+        }
+        .link:hover .link-arrow { transform: translateX(4px); color: var(--text); }
+
+        .link.yt { --brand: #ff0033; }
+        .link.tt { --brand: #fe2c55; }
+        .link.tt .link-icon { background: #111; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.1); text-shadow: -2px -1px 0 #25f4ee, 2px 1px 0 #fe2c55; }
+        .link.ig { --brand: #d62976; }
+        .link.ig .link-icon { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%); }
+        .link.li { --brand: #0a66c2; }
+        .link.gh { --brand: #8b949e; }
+        .link.gh .link-icon { background: #24292f; }
+        .link.web { --brand: #38bdf8; }
+        .link.web .link-icon { background: linear-gradient(135deg, var(--cyan), var(--blue)); }
+        .link.blog { --brand: #818cf8; }
+        .link.blog .link-icon { background: linear-gradient(135deg, var(--blue), var(--magenta)); }
+        .link.res { --brand: #22c55e; }
+        .link.res .link-icon { background: linear-gradient(135deg, #22c55e, #0ea5e9); }
+        .link.mail { --brand: #f59e0b; }
+        .link.mail .link-icon { background: linear-gradient(135deg, #f59e0b, var(--red)); }
+
+        /* Featured card (YouTube) */
+        .link.featured {
+            padding: 18px;
+            background:
+                linear-gradient(135deg, rgba(255, 0, 51, 0.16), rgba(99, 102, 241, 0.12) 70%),
+                var(--card);
+            border-color: rgba(255, 0, 51, 0.35);
+        }
+        .link.featured .link-icon { width: 54px; height: 54px; font-size: 1.5rem; border-radius: 16px; }
+        .badge {
+            display: inline-block;
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 2px 8px;
+            border-radius: 999px;
+            background: #ff0033;
+            color: #fff;
+            margin-left: 6px;
+            vertical-align: 2px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 2.2rem;
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+        footer a { color: var(--text); text-decoration: none; font-weight: 600; }
+        footer a:hover { color: var(--cyan); }
+        .term {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.75rem;
+            color: #64748b;
+            margin-bottom: 0.6rem;
+        }
+        .term .ok { color: #22c55e; }
+        .cursor { animation: blink 1s step-end infinite; }
+        @keyframes blink { 50% { opacity: 0; } }
+
+        /* Toast */
+        .toast {
+            position: fixed;
+            left: 50%;
+            bottom: 24px;
+            transform: translate(-50%, 20px);
+            padding: 10px 18px;
+            border-radius: 999px;
+            background: rgba(15, 18, 26, 0.95);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            font-size: 0.9rem;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.25s, transform 0.25s;
+        }
+        .toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+        /* Entrance animation */
+        .rise { opacity: 0; transform: translateY(16px); animation: rise 0.6s cubic-bezier(.2,.7,.2,1) forwards; animation-delay: calc(var(--i, 0) * 70ms); }
+        @keyframes rise { to { opacity: 1; transform: none; } }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation: none !important; transition: none !important; }
+            .rise { opacity: 1; transform: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="ambient">
+        <div class="photo-blur"></div>
+        <div class="orb a"></div>
+        <div class="orb b"></div>
+        <div class="orb c"></div>
+    </div>
+    <div class="grid"></div>
+
+    <main class="wrap">
+        <div class="top-actions">
+            <a href="index.html" class="icon-btn" aria-label="Portfolio"><i class="fas fa-house"></i></a>
+            <button class="icon-btn" id="share" aria-label="Share this page"><i class="fas fa-share-nodes"></i></button>
+        </div>
+
+        <section class="profile">
+            <div class="avatar-ring rise" style="--i:0">
+                <img src="assets/images/profile.jpg" alt="Bartosz Dybski" width="132" height="132">
+                <span class="status" title="Online"></span>
+            </div>
+            <h1 class="name rise" style="--i:1">Bartosz Dybski <i class="fas fa-circle-check verified" title="Cybersecurity Engineer"></i></h1>
+            <div class="handle rise" style="--i:1">@dybson_cybersecurity</div>
+            <p class="bio rise" style="--i:2">Cybersecurity Engineer 🛡️ I share what I learn about blue team, cloud security &amp; AI security.</p>
+            <div class="chips rise" style="--i:3">
+                <span class="chip"><i class="fab fa-microsoft"></i> SC-500</span>
+                <span class="chip"><i class="fas fa-user-secret"></i> eJPT</span>
+                <span class="chip"><i class="fas fa-location-dot"></i> Wrocław, PL</span>
+            </div>
+            <div class="social-row rise" style="--i:4">
+                <a class="yt" href="https://www.youtube.com/@dybson3" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a class="tt" href="https://www.tiktok.com/@dybson3" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a class="ig" href="https://www.instagram.com/dybson_cybersecurity/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a class="li" href="https://www.linkedin.com/in/bartosz-dybski/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a class="gh" href="https://github.com/dybson3" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+        </section>
+
+        <div class="label rise" style="--i:5">Content</div>
+
+        <a class="link yt featured rise" style="--i:5" href="https://www.youtube.com/@dybson3" target="_blank" rel="noopener">
+            <span class="link-icon"><i class="fab fa-youtube"></i></span>
+            <span class="link-body">
+                <span class="link-title">YouTube <span class="badge">Subscribe</span></span>
+                <span class="link-sub" style="display:block">Cybersecurity videos &amp; tutorials</span>
+            </span>
+            <i class="fas fa-arrow-right link-arrow"></i>
+        </a>
+
+        <a class="link tt rise" style="--i:6" href="https://www.tiktok.com/@dybson3" target="_blank" rel="noopener">
+            <span class="link-icon"><i class="fab fa-tiktok"></i></span>
+            <span class="link-body">
+                <span class="link-title" style="display:block">TikTok</span>
+                <span class="link-sub" style="display:block">@dybson3 &middot; short security tips</span>
+            </span>
+            <i class="fas fa-arrow-right link-arrow"></i>
+        </a>
+
+        <a class="link ig rise" style="--i:7" href="https://www.instagram.com/dybson_cybersecurity/" target="_blank" rel="noopener">
+            <span class="link-icon"><i class="fab fa-instagram"></i></span>
+            <span class="link-body">
+                <span class="link-title" style="display:block">Instagram</span>
+                <span class="link-sub" style="display:block">@dybson_cybersecurity</span>
+            </span>
+            <i class="fas fa-arrow-right link-arrow"></i>
+        </a>
+
+        <div class="label rise" style="--i:8">Learn with me</div>
+
+        <a class="link res rise" style="--i:8" href="resources.html">
+            <span class="link-icon"><i class="fas fa-shield-halved"></i></span>
+            <span class="link-body">
+                <span class="link-title" style="display:block">Free Cybersecurity Resources</span>
+                <span class="link-sub" style="display:block">Courses, tools, labs &amp; reading list</span>
+            </span>
+            <i class="fas fa-arrow-right link-arrow"></i>
+        </a>
+
+        <a class="link blog rise" style="--i:9" href="/blog">
+            <span class="link-icon"><i class="fas fa-book-open"></i></span>
+            <span class="link-body">
+                <span class="link-title" style="display:block">Blog</span>
+                <span class="link-sub" style="display:block">Forensics, detection &amp; malware analysis notes</span>
+            </span>
+            <i class="fas fa-arrow-right link-arrow"></i>
+        </a>
+
+        <div class="label rise" style="--i:10">Professional</div>
+
+        <a class="link web rise" style="--i:10" href="index.html">
+            <span class="link-icon"><i class="fas fa-user-shield"></i></span>
+            <span class="link-body">
+                <span class="link-title" style="display:block">Portfolio &amp; CV</span>
+                <span class="link-sub" style="display:block">Experience, certifications &amp; projects</span>
+            </span>
+            <i class="fas fa-arrow-right link-arrow"></i>
+        </a>
+
+        <a class="link li rise" style="--i:11" href="https://www.linkedin.com/in/bartosz-dybski/" target="_blank" rel="noopener">
+            <span class="link-icon"><i class="fab fa-linkedin-in"></i></span>
+            <span class="link-body">
+                <span class="link-title" style="display:block">LinkedIn</span>
+                <span class="link-sub" style="display:block">Let's connect</span>
+            </span>
+            <i class="fas fa-arrow-right link-arrow"></i>
+        </a>
+
+        <a class="link gh rise" style="--i:12" href="https://github.com/dybson3" target="_blank" rel="noopener">
+            <span class="link-icon"><i class="fab fa-github"></i></span>
+            <span class="link-body">
+                <span class="link-title" style="display:block">GitHub</span>
+                <span class="link-sub" style="display:block">Home labs &amp; security projects</span>
+            </span>
+            <i class="fas fa-arrow-right link-arrow"></i>
+        </a>
+
+        <a class="link mail rise" style="--i:13" href="mailto:b.dybski3@gmail.com">
+            <span class="link-icon"><i class="fas fa-envelope"></i></span>
+            <span class="link-body">
+                <span class="link-title" style="display:block">Business &amp; collabs</span>
+                <span class="link-sub" style="display:block">b.dybski3@gmail.com</span>
+            </span>
+            <i class="fas fa-arrow-right link-arrow"></i>
+        </a>
+
+        <footer class="rise" style="--i:14">
+            <div class="term"><span class="ok">[✓]</span> connection secure <span class="cursor">_</span></div>
+            &copy; 2026 <a href="index.html">Bartosz Dybski</a>
+        </footer>
+    </main>
+
+    <div class="toast" id="toast">Link copied ✓</div>
+
+    <script>
+        // Brand-coloured spotlight that follows the cursor
+        document.querySelectorAll('.link').forEach(el => {
+            el.addEventListener('pointermove', e => {
+                const r = el.getBoundingClientRect();
+                el.style.setProperty('--mx', `${e.clientX - r.left}px`);
+                el.style.setProperty('--my', `${e.clientY - r.top}px`);
+            });
+        });
+
+        // Share / copy link
+        const toast = document.getElementById('toast');
+        document.getElementById('share').addEventListener('click', async () => {
+            const url = 'https://dybson3.github.io/links';
+            try {
+                if (navigator.share) {
+                    await navigator.share({ title: 'Bartosz Dybski — Cybersecurity', url });
+                    return;
+                }
+                await navigator.clipboard.writeText(url);
+                toast.classList.add('show');
+                setTimeout(() => toast.classList.remove('show'), 1800);
+            } catch (e) { /* user cancelled */ }
+        });
+    </script>
+</body>
+</html>
