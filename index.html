@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bartosz Dybski | Cybersecurity Engineer</title>
-    <meta name="description" content="Portfolio of Bartosz Dybski, a Cybersecurity Engineer specializing in incident response, SOC, and network security.">
+    <meta name="description" content="Portfolio of Bartosz Dybski, Cybersecurity Engineer focused on identity & access management, incident response, threat detection and Azure cloud security. Microsoft SC-500 & eJPT certified.">
+    <meta name="theme-color" content="#07090d">
+    <script>document.documentElement.classList.add('js');</script>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Custom CSS -->
@@ -16,34 +18,44 @@
 </head>
 <body>
     <div class="background-effects">
+        <div class="grid-bg"></div>
         <div class="glow glow-1"></div>
         <div class="glow glow-2"></div>
     </div>
 
-    <nav class="navbar">
-        <div class="nav-brand">BD.</div>
-        <div class="nav-links">
-            <a href="index.html#about" class="nav-link">About</a>
-            <a href="index.html#experience" class="nav-link">Experience</a>
-            <a href="index.html#projects" class="nav-link">Projects</a>
-            <a href="socials.html" class="nav-link">Socials</a>
-            <a href="/blog" class="nav-btn primary-btn"><i class="fas fa-book"></i> Read My Blog</a>
-        </div>
-    </nav>
+    <header class="nav-wrapper">
+        <nav class="navbar">
+            <a href="#top" class="nav-brand">BD<span class="brand-dot">.</span></a>
+            <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
+            <div class="nav-links">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="socials.html" class="nav-link">Socials</a>
+                <a href="/blog" class="nav-btn primary-btn"><i class="fas fa-book"></i> Read My Blog</a>
+            </div>
+        </nav>
+    </header>
 
-    <main class="container">
+    <main class="container" id="top">
         <!-- Hero Section -->
-        <section class="hero glass-panel">
+        <section class="hero glass-panel reveal">
             <div class="hero-content">
-                <p class="greeting">Hello, I'm</p>
-                <h1 class="name">Bartosz Dybski</h1>
-                <h2 class="role"><span class="highlight">Cybersecurity</span> Engineer</h2>
+                <div class="status-pill"><span class="pulse"></span> Junior Information Security Engineer @ Armacell</div>
+                <h1 class="name">Bartosz <span class="gradient-text">Dybski</span></h1>
+                <h2 class="role">Cybersecurity Engineer</h2>
                 <p class="summary">
-                    Cybersecurity graduate from Wrocław University of Science and Technology currently working as a Junior Information Security Engineer. I specialize in incident response, phishing analysis, security log monitoring, and Zero Trust Network Access (ZTNA) solutions.
+                    Identity &amp; access management, incident response and threat detection &mdash; with a growing focus on
+                    <strong>cloud security</strong> and <strong>Azure-based security architecture</strong>.
                 </p>
+                <div class="hero-actions">
+                    <a href="mailto:b.dybski3@gmail.com" class="nav-btn primary-btn"><i class="fas fa-paper-plane"></i> Get in touch</a>
+                    <a href="#projects" class="nav-btn ghost-btn"><i class="fas fa-layer-group"></i> View projects</a>
+                </div>
                 <div class="social-links">
-                    <a href="https://www.linkedin.com/in/bartosz-dybski/" target="_blank" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://github.com/dybson3" target="_blank" class="social-icon" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/bartosz-dybski/" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/dybson3" target="_blank" rel="noopener" class="social-icon" aria-label="GitHub"><i class="fab fa-github"></i></a>
                     <a href="mailto:b.dybski3@gmail.com" class="social-icon" aria-label="Email"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
@@ -53,17 +65,66 @@
                         <span class="dot red"></span>
                         <span class="dot yellow"></span>
                         <span class="dot green"></span>
+                        <span class="terminal-title">bartosz@sec-ops: ~</span>
                     </div>
                     <div class="terminal-body">
-                        <p class="command">> whoami</p>
-                        <p class="output">bartosz_dybski</p>
-                        <p class="command">> ./display_skills.sh</p>
-                        <p class="output highlight-text">[+] SOC & Incident Response</p>
-                        <p class="output highlight-text">[+] Network Security</p>
-                        <p class="output highlight-text">[+] Identity & Access Management</p>
-                        <p class="command blink">> _</p>
+                        <p class="command"><span class="prompt">$</span> whoami</p>
+                        <p class="output">bartosz_dybski // cybersecurity engineer</p>
+                        <p class="command"><span class="prompt">$</span> cat certs.txt</p>
+                        <p class="output highlight-text">[✓] Microsoft SC-500 &mdash; Cloud &amp; AI Security</p>
+                        <p class="output highlight-text">[✓] eJPT &mdash; Junior Penetration Tester</p>
+                        <p class="command"><span class="prompt">$</span> ./focus.sh</p>
+                        <p class="output highlight-text">[+] Identity &amp; Access Management</p>
+                        <p class="output highlight-text">[+] Incident Response &amp; Detection</p>
+                        <p class="output highlight-text">[+] Zero Trust &amp; Cloud Security</p>
+                        <p class="command"><span class="prompt">$</span> <span class="blink">_</span></p>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- Stats -->
+        <section class="stats reveal">
+            <div class="stat glass-panel">
+                <div class="stat-value">SC-500</div>
+                <div class="stat-label">Microsoft Certified</div>
+            </div>
+            <div class="stat glass-panel">
+                <div class="stat-value">eJPT</div>
+                <div class="stat-label">INE Security</div>
+            </div>
+            <div class="stat glass-panel">
+                <div class="stat-value">1 yr 10 mo</div>
+                <div class="stat-label">Industry experience</div>
+            </div>
+            <div class="stat glass-panel">
+                <div class="stat-value">B.Sc.</div>
+                <div class="stat-label">Cybersecurity, PWr</div>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section id="about" class="glass-panel section-padding reveal">
+            <div class="section-header">
+                <i class="fas fa-user-shield icon-accent"></i>
+                <h3>About Me</h3>
+            </div>
+            <div class="about-grid">
+                <p class="about-text">
+                    Cybersecurity engineer (Wrocław University of Science and Technology) with hands-on experience in
+                    identity and access management, incident response, and threat detection. As a
+                    <strong>Junior Information Security Engineer at Armacell</strong>, I manage IAM in Azure Entra ID,
+                    automate security workflows with PowerShell, and support Zero Trust Network Access implementation on
+                    Fortinet infrastructure. I apply strong analytical thinking to identify security threats and anomalies
+                    across log and network data. <strong>Microsoft SC-500 certified</strong>, with a growing focus on cloud
+                    security and Azure-based security architecture.
+                </p>
+                <ul class="about-facts">
+                    <li><i class="fas fa-location-dot"></i> Wrocław, Poland</li>
+                    <li><i class="fas fa-briefcase"></i> Armacell &mdash; Information Security</li>
+                    <li><i class="fas fa-graduation-cap"></i> B.Sc. Cybersecurity, PWr</li>
+                    <li><i class="fas fa-language"></i> English B2</li>
+                </ul>
             </div>
         </section>
 
@@ -71,76 +132,89 @@
             <!-- Left Column -->
             <div class="column-left">
                 <!-- Experience Section -->
-                <section id="experience" class="glass-panel section-padding">
+                <section id="experience" class="glass-panel section-padding reveal">
                     <div class="section-header">
                         <i class="fas fa-briefcase icon-accent"></i>
                         <h3>Experience</h3>
                     </div>
-                    
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-dot"></div>
-                            <div class="timeline-date">02.2026 - Present</div>
-                            <h4 class="timeline-title">Junior Information Security Engineer</h4>
-                            <div class="timeline-company">ARMACELL | Wrocław, Poland</div>
-                            <ul class="timeline-details">
-                                <li>Investigating and responding to phishing attempts using <strong>Darktrace</strong>.</li>
-                                <li>Incident detection, analysis, and response using <strong>SentinelOne</strong>.</li>
-                                <li>Assisting in the implementation of <strong>Zero Trust Network Access (ZTNA)</strong> on Fortinet infrastructure.</li>
-                                <li>Implemented secure outbound internet access using <strong>Zscaler (ZIA)</strong>.</li>
-                                <li>Managed identity and access control (IAM) within <strong>Azure Entra ID</strong>.</li>
-                            </ul>
-                        </div>
 
-                        <div class="timeline-item">
-                            <div class="timeline-dot"></div>
-                            <div class="timeline-date">02.2025 - 02.2026</div>
-                            <h4 class="timeline-title">Cybersecurity Intern</h4>
-                            <div class="timeline-company">ARMACELL | Wrocław, Poland</div>
-                            <ul class="timeline-details">
-                                <li>Analyzed security logs to identify threats and anomalies.</li>
-                                <li>Supported users with security-related issues via ticketing system (Halo).</li>
-                                <li>Created and maintained technical documentation.</li>
-                            </ul>
+                    <div class="company-head">
+                        <div class="company-logo">A</div>
+                        <div>
+                            <div class="company-name">ARMACELL</div>
+                            <div class="timeline-company">Wrocław, Poland</div>
                         </div>
                     </div>
+
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot current"></div>
+                            <div class="timeline-date">02.2026 &ndash; Present</div>
+                            <h4 class="timeline-title">Junior Information Security Engineer</h4>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-date">02.2025 &ndash; 02.2026</div>
+                            <h4 class="timeline-title">Cybersecurity Intern</h4>
+                        </div>
+                    </div>
+
+                    <ul class="timeline-details">
+                        <li>Managed identity and access control (IAM) within <strong>Azure Entra ID</strong>, including user/group lifecycle management and access provisioning.</li>
+                        <li>Automated repetitive security tasks using <strong>PowerShell</strong>, reducing manual effort in routine IAM and reporting workflows.</li>
+                        <li>Investigating and responding to phishing attempts and suspicious emails using <strong>Darktrace</strong>.</li>
+                        <li>Incident detection, analysis, and response using <strong>SentinelOne</strong>.</li>
+                        <li>Assisting in the implementation of <strong>Zero Trust Network Access (ZTNA)</strong> on Fortinet infrastructure.</li>
+                        <li>Managed cloud vulnerability scanning with <strong>Wiz</strong> and remediated identified security risks.</li>
+                        <li>Implemented secure outbound internet access and traffic inspection using <strong>Zscaler Internet Access (ZIA)</strong>.</li>
+                        <li>Supporting users with security-related issues via ticketing system (<strong>Halo</strong>).</li>
+                    </ul>
                 </section>
 
                 <!-- Education & Certs -->
-                <section class="glass-panel section-padding">
+                <section id="certifications" class="glass-panel section-padding reveal">
                     <div class="section-header">
-                        <i class="fas fa-graduation-cap icon-accent"></i>
-                        <h3>Education & Certifications</h3>
+                        <i class="fas fa-award icon-accent"></i>
+                        <h3>Certifications</h3>
                     </div>
-                    
-                    <div class="edu-item">
-                        <h4 class="edu-title">Bachelor's Degree in Cybersecurity</h4>
-                        <div class="edu-school">Wroclaw University of Science and Technology</div>
-                        <div class="edu-date">10.2022 - 01.2026</div>
-                    </div>
-
-                    <div class="divider"></div>
 
                     <div class="cert-item">
-                        <div class="cert-icon">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
+                        <div class="cert-icon"><i class="fab fa-microsoft"></i></div>
                         <div class="cert-info">
-                            <h4 class="cert-title">eJPT - Junior Penetration Tester</h4>
+                            <h4 class="cert-title">Microsoft Certified: Cloud and AI Security Engineer Associate (SC-500)</h4>
+                            <div class="cert-issuer">Microsoft</div>
+                            <p class="cert-desc">Successor to AZ-500 (Azure Security Engineer Associate).</p>
+                        </div>
+                    </div>
+
+                    <div class="cert-item">
+                        <div class="cert-icon"><i class="fas fa-user-secret"></i></div>
+                        <div class="cert-info">
+                            <h4 class="cert-title">eJPT &ndash; Junior Penetration Tester</h4>
                             <div class="cert-issuer">INE Security</div>
-                            <div class="cert-date">Valid until 08.2028</div>
+                            <div class="cert-date">08.2025 &middot; valid until 08.2028</div>
                             <p class="cert-desc">Fundamentals of penetration testing, network exploitation, web application attacks, and incident analysis.</p>
                         </div>
                     </div>
 
-                    <div class="cert-item" style="margin-top: 15px;">
-                        <div class="cert-icon">
-                            <i class="fab fa-google"></i>
-                        </div>
+                    <div class="cert-item">
+                        <div class="cert-icon"><i class="fab fa-google"></i></div>
                         <div class="cert-info">
                             <h4 class="cert-title">Google Cybersecurity Professional</h4>
                             <div class="cert-issuer">Coursera</div>
                         </div>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <div class="section-header small">
+                        <i class="fas fa-graduation-cap icon-accent"></i>
+                        <h3>Education</h3>
+                    </div>
+                    <div class="edu-item">
+                        <h4 class="edu-title">Bachelor's Degree in Cybersecurity</h4>
+                        <div class="edu-school">Wrocław University of Science and Technology</div>
+                        <div class="edu-date">10.2022 &ndash; 01.2026</div>
                     </div>
                 </section>
             </div>
@@ -148,14 +222,14 @@
             <!-- Right Column -->
             <div class="column-right">
                 <!-- Skills Section -->
-                <section class="glass-panel section-padding">
+                <section id="skills" class="glass-panel section-padding reveal">
                     <div class="section-header">
                         <i class="fas fa-code icon-accent"></i>
-                        <h3>Skills & Tools</h3>
+                        <h3>Skills &amp; Tools</h3>
                     </div>
 
                     <div class="skills-group">
-                        <h4 class="skills-heading">Core Competencies</h4>
+                        <h4 class="skills-heading">SOC</h4>
                         <div class="tags-container">
                             <span class="tag">Incident Response</span>
                             <span class="tag">Log Analysis</span>
@@ -165,93 +239,179 @@
                     </div>
 
                     <div class="skills-group">
-                        <h4 class="skills-heading">Security Technologies</h4>
+                        <h4 class="skills-heading">Identity &amp; Cloud</h4>
                         <div class="tags-container">
-                            <span class="tag tech-tag"><i class="fas fa-shield-virus"></i> SentinelOne</span>
-                            <span class="tag tech-tag"><i class="fas fa-network-wired"></i> Zscaler / Fortinet</span>
-                            <span class="tag tech-tag"><i class="fas fa-search"></i> Splunk</span>
-                            <span class="tag tech-tag"><i class="fas fa-paw"></i> Wazuh</span>
-                            <span class="tag tech-tag"><i class="fas fa-envelope-open-text"></i> Darktrace</span>
+                            <span class="tag tech-tag"><i class="fab fa-microsoft"></i> Azure</span>
+                            <span class="tag tech-tag"><i class="fas fa-id-badge"></i> Azure Entra ID / IAM</span>
+                            <span class="tag tech-tag"><i class="fas fa-envelope"></i> M365</span>
+                            <span class="tag tech-tag"><i class="fas fa-cloud"></i> Wiz</span>
+                            <span class="tag tech-tag"><i class="fas fa-terminal"></i> PowerShell</span>
                         </div>
                     </div>
 
                     <div class="skills-group">
-                        <h4 class="skills-heading">Infrastructure</h4>
+                        <h4 class="skills-heading">Security Tools</h4>
                         <div class="tags-container">
-                            <span class="tag"><i class="fab fa-windows"></i> Windows Server</span>
+                            <span class="tag tech-tag"><i class="fas fa-shield-virus"></i> SentinelOne</span>
+                            <span class="tag tech-tag"><i class="fas fa-envelope-open-text"></i> Darktrace Email</span>
+                            <span class="tag tech-tag"><i class="fas fa-network-wired"></i> Zscaler</span>
+                            <span class="tag tech-tag"><i class="fas fa-fire"></i> Fortinet</span>
+                            <span class="tag tech-tag"><i class="fas fa-search"></i> Splunk</span>
+                            <span class="tag tech-tag"><i class="fas fa-paw"></i> Wazuh</span>
+                            <span class="tag tech-tag"><i class="fas fa-eye"></i> Sysmon</span>
+                            <span class="tag tech-tag"><i class="fas fa-wave-square"></i> Wireshark</span>
+                            <span class="tag tech-tag"><i class="fas fa-robot"></i> AI</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-group">
+                        <h4 class="skills-heading">Networking</h4>
+                        <div class="tags-container">
+                            <span class="tag">OSI Model</span>
+                            <span class="tag">Subnetting</span>
+                            <span class="tag">Routing / Switching</span>
+                            <span class="tag">Ports &amp; Protocols</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-group">
+                        <h4 class="skills-heading">OS / Virtualization</h4>
+                        <div class="tags-container">
+                            <span class="tag"><i class="fab fa-windows"></i> Windows 10/11</span>
+                            <span class="tag"><i class="fas fa-server"></i> Windows Server</span>
                             <span class="tag"><i class="fab fa-linux"></i> Linux/Unix</span>
-                            <span class="tag"><i class="fab fa-microsoft"></i> Azure Entra ID</span>
-                            <span class="tag"><i class="fas fa-server"></i> Active Directory</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-group">
+                        <h4 class="skills-heading">Soft Skills</h4>
+                        <div class="tags-container">
+                            <span class="tag">Organization</span>
+                            <span class="tag">Communication &amp; Teamwork</span>
+                            <span class="tag">Problem-solving</span>
+                            <span class="tag">Attention to detail</span>
                         </div>
                     </div>
                 </section>
 
-                <!-- Projects Section -->
-                <section id="projects" class="glass-panel section-padding">
+                <!-- Self-development -->
+                <section class="glass-panel section-padding reveal">
                     <div class="section-header">
-                        <i class="fas fa-project-diagram icon-accent"></i>
-                        <h3>Featured Projects</h3>
+                        <i class="fas fa-seedling icon-accent"></i>
+                        <h3>Self-Development</h3>
                     </div>
-
-                    <div class="project-card">
-                        <div class="project-header">
-                            <h4 class="project-title">Azure Security & Zero Trust Architecture</h4>
-                            <a href="azure-security-project.html" class="project-link" aria-label="Read More"><i class="fas fa-external-link-alt"></i></a>
-                        </div>
-                        <p class="project-desc">A hands-on cloud security project preparing for the SC-500 certification. Demonstrates Zero Trust principles, featuring Managed Identities, granular RBAC for Key Vault and Storage, Microsoft Sentinel SIEM integration, Azure SQL Dynamic Data Masking, and AI content moderation via Azure AI Foundry.</p>
-                        <div class="project-tags">
-                            <span class="tag small">Azure</span>
-                            <span class="tag small">Zero Trust</span>
-                            <span class="tag small">Sentinel</span>
-                            <span class="tag small">RBAC</span>
+                    <div class="cert-item">
+                        <div class="cert-icon"><i class="fas fa-flag"></i></div>
+                        <div class="cert-info">
+                            <h4 class="cert-title">TryHackMe</h4>
+                            <p class="cert-desc">Courses focused on modern security trends &mdash; specifically AI and agentic security.</p>
                         </div>
                     </div>
-
-                    <div class="project-card">
-                        <div class="project-header">
-                            <h4 class="project-title">SOC Automation Lab</h4>
-                            <a href="https://github.com/dybson3/SOC-Automation-Lab" target="_blank" class="project-link"><i class="fab fa-github"></i></a>
-                        </div>
-                        <p class="project-desc">Security monitoring and incident response environment utilizing Shuffle, Wazuh and TheHive. Demonstrates how to automate common SOC tasks to detect and respond to suspicious activities.</p>
-                        <div class="project-tags">
-                            <span class="tag small">Wazuh</span>
-                            <span class="tag small">Shuffle SOAR</span>
-                            <span class="tag small">TheHive</span>
-                        </div>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-header">
-                            <h4 class="project-title">Active Directory Lab</h4>
-                            <a href="https://github.com/dybson3/Active-Directory-Lab" target="_blank" class="project-link"><i class="fab fa-github"></i></a>
-                        </div>
-                        <p class="project-desc">Cybersecurity simulation designed to mimic a typical enterprise environment. Includes a network of virtual machines (Windows Server, Windows 10, Kali, Ubuntu) with simulated attacks and log analysis.</p>
-                        <div class="project-tags">
-                            <span class="tag small">Active Directory</span>
-                            <span class="tag small">Splunk</span>
-                            <span class="tag small">Sysmon</span>
+                    <div class="cert-item">
+                        <div class="cert-icon"><i class="fas fa-book-open"></i></div>
+                        <div class="cert-info">
+                            <h4 class="cert-title">Learning in public</h4>
+                            <p class="cert-desc">Notes on forensics, detection, malware analysis and threat models on my <a href="/blog" class="inline-link">blog</a>.</p>
                         </div>
                     </div>
                 </section>
             </div>
         </div>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section-block reveal">
+            <div class="section-header">
+                <i class="fas fa-project-diagram icon-accent"></i>
+                <h3>Featured Projects</h3>
+            </div>
+
+            <div class="projects-grid">
+                <a href="azure-security-project.html" class="project-card featured">
+                    <div class="project-header">
+                        <span class="project-kicker">Cloud Security</span>
+                        <span class="project-link" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
+                    </div>
+                    <h4 class="project-title">Azure Security &amp; Zero Trust Architecture</h4>
+                    <p class="project-desc">Hands-on cloud security project built while preparing for SC-500. Demonstrates Zero Trust principles: Managed Identities, granular RBAC for Key Vault and Storage, Microsoft Sentinel SIEM, Azure SQL Dynamic Data Masking, and AI content moderation via Azure AI Foundry.</p>
+                    <div class="project-tags">
+                        <span class="tag small">Azure</span>
+                        <span class="tag small">Zero Trust</span>
+                        <span class="tag small">Sentinel</span>
+                        <span class="tag small">RBAC</span>
+                    </div>
+                </a>
+
+                <a href="https://github.com/dybson3/Active-Directory-Lab" target="_blank" rel="noopener" class="project-card">
+                    <div class="project-header">
+                        <span class="project-kicker">Detection Lab</span>
+                        <span class="project-link" aria-hidden="true"><i class="fab fa-github"></i></span>
+                    </div>
+                    <h4 class="project-title">Active Directory Lab</h4>
+                    <p class="project-desc">Active Directory security lab (Windows Server, Splunk, Sysmon) with simulated attacks using Hydra and log analysis across a network of Windows, Kali and Ubuntu VMs.</p>
+                    <div class="project-tags">
+                        <span class="tag small">Active Directory</span>
+                        <span class="tag small">Splunk</span>
+                        <span class="tag small">Sysmon</span>
+                    </div>
+                </a>
+
+                <a href="https://github.com/dybson3/SOC-Automation-Lab" target="_blank" rel="noopener" class="project-card">
+                    <div class="project-header">
+                        <span class="project-kicker">SOAR</span>
+                        <span class="project-link" aria-hidden="true"><i class="fab fa-github"></i></span>
+                    </div>
+                    <h4 class="project-title">SOC Automation Lab</h4>
+                    <p class="project-desc">Security monitoring and incident response environment using Shuffle, Wazuh and TheHive &mdash; automating common SOC tasks to detect and respond to suspicious activity.</p>
+                    <div class="project-tags">
+                        <span class="tag small">Wazuh</span>
+                        <span class="tag small">Shuffle SOAR</span>
+                        <span class="tag small">TheHive</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Contact CTA -->
+        <section class="cta glass-panel reveal">
+            <div>
+                <h3>Let's talk security.</h3>
+                <p>Open to conversations about IAM, cloud security and SOC work.</p>
+            </div>
+            <div class="hero-actions">
+                <a href="mailto:b.dybski3@gmail.com" class="nav-btn primary-btn"><i class="fas fa-envelope"></i> b.dybski3@gmail.com</a>
+                <a href="https://www.linkedin.com/in/bartosz-dybski/" target="_blank" rel="noopener" class="nav-btn ghost-btn"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+            </div>
+        </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 Bartosz Dybski. Designed for Security.</p>
+        <p>&copy; 2026 Bartosz Dybski &middot; Designed for Security.</p>
     </footer>
 
     <script>
-        // Simple script to add a subtle hover effect to cards based on mouse position
-        document.querySelectorAll('.glass-panel').forEach(panel => {
+        // Cursor-follow glow on panels
+        document.querySelectorAll('.glass-panel, .project-card').forEach(panel => {
             panel.addEventListener('mousemove', e => {
                 const rect = panel.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                panel.style.setProperty('--mouse-x', `${x}px`);
-                panel.style.setProperty('--mouse-y', `${y}px`);
+                panel.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
+                panel.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
             });
         });
+
+        // Mobile nav
+        const toggle = document.querySelector('.nav-toggle');
+        const links = document.querySelector('.nav-links');
+        toggle.addEventListener('click', () => {
+            const open = links.classList.toggle('open');
+            toggle.setAttribute('aria-expanded', open);
+        });
+        links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+
+        // Reveal on scroll
+        const io = 'IntersectionObserver' in window ? new IntersectionObserver(entries => {
+            entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('visible'); io.unobserve(en.target); } });
+        }, { threshold: 0.08 }) : null;
+        document.querySelectorAll('.reveal').forEach(el => io ? io.observe(el) : el.classList.add('visible'));
     </script>
 </body>
 </html>
