@@ -1255,3 +1255,7 @@ html[lang="en"] .lang-switch [data-l="en"] {
         gap: 0.6rem;
     }
 }
+
+button {
+    font-family: inherit;
+}

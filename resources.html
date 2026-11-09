@@ -17,7 +17,11 @@
     <style>
         .resources-header {
             text-align: center;
-            margin: 3rem 0;
+            margin: 2rem 0 3rem;
+        }
+        @media (max-width: 768px) {
+            .resources-header .name { font-size: 2.2rem !important; }
+            .resources-grid { grid-template-columns: 1fr; gap: 1.25rem; }
         }
         .resources-grid {
             display: grid;
@@ -50,29 +54,45 @@
             color: var(--text-primary);
             text-decoration: none;
             font-weight: 500;
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
+            display: grid;
+            grid-template-columns: 1rem 1fr;
+            column-gap: 10px;
+            align-items: baseline;
             transition: color 0.3s ease;
         }
         .resource-link:hover {
             color: var(--accent-color);
         }
-        .resource-link i {
-            margin-top: 4px;
+        .resource-link > i {
             color: var(--accent-color);
-            font-size: 0.9em;
+            font-size: 0.85em;
+        }
+        .resource-name {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 4px 8px;
+        }
+        .top-pick {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #ffbd2e;
+            white-space: nowrap;
         }
         .resource-desc {
+            grid-column: 2;
             display: block;
-            font-size: 0.85rem;
+            font-size: 0.88rem;
+            line-height: 1.5;
             color: var(--text-secondary);
-            margin-top: 5px;
-            margin-left: 24px;
+            margin-top: 4px;
             font-weight: 400;
         }
+        .coming-soon .section-header {
+            padding-right: 3.5rem;
+        }
         .back-nav {
-            margin-bottom: 2rem;
+            margin: 2rem 0 0;
         }
         .back-link {
             color: var(--text-secondary);
@@ -123,11 +143,11 @@
 
         <div class="resources-grid">
             <!-- CV Creator (Coming Soon) -->
-            <div class="glass-panel section-padding resource-card" style="border: 1px solid var(--accent-color); position: relative; overflow: hidden;">
+            <div class="glass-panel section-padding resource-card coming-soon" style="border: 1px solid var(--accent-color); position: relative; overflow: hidden;">
                 <div style="position: absolute; top: 15px; right: -35px; background: var(--accent-color); color: #000; padding: 5px 40px; transform: rotate(45deg); font-weight: bold; font-size: 0.8rem; box-shadow: 0 0 10px rgba(0,0,0,0.5);"><span lang="pl">WKRÓTCE</span><span lang="en">COMING SOON</span></div>
                 <div class="section-header" style="margin-bottom: 1rem;">
                     <i class="fas fa-file-alt icon-accent"></i>
-                    <h3><span lang="pl">Kreator CV dla cyber</span><span lang="en">Cyber CV Creator</span></h3>
+                    <h3><span lang="pl">Kreator CV</span><span lang="en">Cyber CV Creator</span></h3>
                 </div>
                 <p style="color: var(--text-secondary); margin-bottom: 1rem; flex-grow: 1;"><span lang="pl">Narzędzie do tworzenia profesjonalnego CV, przyjaznego dla systemów ATS, dopasowanego do ról w cyberbezpieczeństwie (SOC, pentester, GRC). Bądź na bieżąco!</span><span lang="en">A dedicated tool to generate professional, ATS-friendly resumes tailored specifically for Cybersecurity roles (SOC, Pentester, GRC). Stay tuned!</span></p>
                 <div style="text-align: center; margin-top: auto;">
@@ -144,25 +164,29 @@
                 <ul class="resource-list">
                     <li>
                         <a href="https://tryhackme.com/" target="_blank" class="resource-link">
-                            <i class="fas fa-external-link-alt"></i> TryHackMe <span style="color: #ffbd2e; margin-left: 5px;">⭐ <span lang="pl">Polecam</span><span lang="en">Top Pick</span></span>
+                            <i class="fas fa-external-link-alt"></i>
+                            <span class="resource-name">TryHackMe <span class="top-pick">⭐ <span lang="pl">Polecam</span><span lang="en">Top Pick</span></span></span>
                             <span class="resource-desc"><span lang="pl">Absolutnie najlepsze miejsce na start. Świetne interaktywne „roomy” z bezpieczeństwa ofensywnego i defensywnego.</span><span lang="en">The absolute best place to start. Incredible interactive rooms covering both offensive and defensive security.</span></span>
                         </a>
                     </li>
                     <li>
                         <a href="https://letsdefend.io/" target="_blank" class="resource-link">
-                            <i class="fas fa-external-link-alt"></i> LetsDefend
+                            <i class="fas fa-external-link-alt"></i>
+                            <span class="resource-name">LetsDefend</span>
                             <span class="resource-desc"><span lang="pl">Świetny trening blue team. Symuluje prawdziwy SOC, w którym badasz alerty i analizujesz logi.</span><span lang="en">Excellent Blue Team training. Simulates a real SOC environment where you investigate alerts and analyze logs.</span></span>
                         </a>
                     </li>
                     <li>
                         <a href="https://www.hackthebox.com/" target="_blank" class="resource-link">
-                            <i class="fas fa-external-link-alt"></i> HackTheBox (HTB)
+                            <i class="fas fa-external-link-alt"></i>
+                            <span class="resource-name">HackTheBox (HTB)</span>
                             <span class="resource-desc"><span lang="pl">Bardziej zaawansowana platforma, idealna do zgłębiania konkretnych podatności i praktycznego pentestingu.</span><span lang="en">More advanced platform, excellent for deep-diving into specific vulnerabilities and hands-on pentesting.</span></span>
                         </a>
                     </li>
                     <li>
                         <a href="https://portswigger.net/web-security" target="_blank" class="resource-link">
-                            <i class="fas fa-external-link-alt"></i> Web Security Academy
+                            <i class="fas fa-external-link-alt"></i>
+                            <span class="resource-name">Web Security Academy</span>
                             <span class="resource-desc"><span lang="pl">Darmowe szkolenia światowej klasy z bezpieczeństwa aplikacji webowych od twórców Burp Suite.</span><span lang="en">Free, world-class web application security training from the creators of Burp Suite.</span></span>
                         </a>
                     </li>
@@ -178,25 +202,29 @@
                 <ul class="resource-list">
                     <li>
                         <a href="https://cyberdefenders.org/" target="_blank" class="resource-link">
-                            <i class="fas fa-external-link-alt"></i> CyberDefenders <span style="color: #ffbd2e; margin-left: 5px;">⭐ <span lang="pl">Polecam</span><span lang="en">Top Pick</span></span>
+                            <i class="fas fa-external-link-alt"></i>
+                            <span class="resource-name">CyberDefenders <span class="top-pick">⭐ <span lang="pl">Polecam</span><span lang="en">Top Pick</span></span></span>
                             <span class="resource-desc"><span lang="pl">Świetna platforma blue team z darmowymi labami z informatyki śledczej i reagowania na incydenty (DFIR).</span><span lang="en">Incredible blue team platform offering free labs focusing on digital forensics, incident response (DFIR).</span></span>
                         </a>
                     </li>
                     <li>
                         <a href="https://www.coursera.org/professional-certificates/google-cybersecurity" target="_blank" class="resource-link">
-                            <i class="fas fa-external-link-alt"></i> Google Cybersecurity
+                            <i class="fas fa-external-link-alt"></i>
+                            <span class="resource-name">Google Cybersecurity</span>
                             <span class="resource-desc"><span lang="pl">Świetny kurs podstawowy dla zupełnie początkujących: podstawy sieci, Linuksa i Pythona.</span><span lang="en">A great foundational course for absolute beginners wanting to understand the basics of networks, Linux, Python.</span></span>
                         </a>
                     </li>
                     <li>
                         <a href="https://www.antisyphontraining.com/" target="_blank" class="resource-link">
-                            <i class="fas fa-external-link-alt"></i> Antisyphon Training
+                            <i class="fas fa-external-link-alt"></i>
+                            <span class="resource-name">Antisyphon Training</span>
                             <span class="resource-desc"><span lang="pl">Wysokiej jakości, przystępne cenowo szkolenia (często „Pay What You Can”) od ekspertów takich jak John Strand.</span><span lang="en">High-quality, affordable (often "Pay What You Can") training courses from industry experts like John Strand.</span></span>
                         </a>
                     </li>
                     <li>
                         <a href="https://rangeforce.com/" target="_blank" class="resource-link">
-                            <i class="fas fa-external-link-alt"></i> RangeForce Community
+                            <i class="fas fa-external-link-alt"></i>
+                            <span class="resource-name">RangeForce Community</span>
                             <span class="resource-desc"><span lang="pl">Darmowa wersja community ze świetnymi interaktywnymi modułami dla analityków SOC i z bezpieczeństwa chmury.</span><span lang="en">Offers a free community edition with great interactive SOC analyst and cloud security modules.</span></span>
                         </a>
                     </li>
@@ -212,25 +240,29 @@
                 <ul class="resource-list">
                     <li>
                         <a href="https://www.youtube.com/c/JohnHammond010" target="_blank" class="resource-link">
-                            <i class="fas fa-external-link-alt"></i> John Hammond <span style="color: #ffbd2e; margin-left: 5px;">⭐ <span lang="pl">Polecam</span><span lang="en">Top Pick</span></span>
+                            <i class="fas fa-external-link-alt"></i>
+                            <span class="resource-name">John Hammond <span class="top-pick">⭐ <span lang="pl">Polecam</span><span lang="en">Top Pick</span></span></span>
                             <span class="resource-desc"><span lang="pl">Legendarny twórca: analiza malware, CTF-y i prawdziwe podatności.</span><span lang="en">Legendary content creator covering malware analysis, CTFs, and real-world vulnerabilities.</span></span>
                         </a>
                     </li>
                     <li>
                         <a href="https://www.youtube.com/c/NetworkChuck" target="_blank" class="resource-link">
-                            <i class="fas fa-external-link-alt"></i> NetworkChuck
+                            <i class="fas fa-external-link-alt"></i>
+                            <span class="resource-name">NetworkChuck</span>
                             <span class="resource-desc"><span lang="pl">Podstawy sieci i bezpieczeństwa z dużą dawką energii. Świetnie nakręca do nauki IT.</span><span lang="en">High-energy networking and security basics. Great for getting hyped about learning IT.</span></span>
                         </a>
                     </li>
                     <li>
                         <a href="https://www.youtube.com/c/DavidBombal" target="_blank" class="resource-link">
-                            <i class="fas fa-external-link-alt"></i> David Bombal
+                            <i class="fas fa-external-link-alt"></i>
+                            <span class="resource-name">David Bombal</span>
                             <span class="resource-desc"><span lang="pl">Techniczne wywiady z gigantami branży i praktyczne tutoriale z sieci i bezpieczeństwa.</span><span lang="en">Deep technical interviews with industry giants and practical networking/security tutorials.</span></span>
                         </a>
                     </li>
                     <li>
                         <a href="https://www.youtube.com/@_johnd" target="_blank" class="resource-link">
-                            <i class="fas fa-external-link-alt"></i> Gerald Auger (Simply Cyber)
+                            <i class="fas fa-external-link-alt"></i>
+                            <span class="resource-name">Gerald Auger (Simply Cyber)</span>
                             <span class="resource-desc"><span lang="pl">Świetne źródło dla osób, które chcą wejść w GRC i SOC.</span><span lang="en">Amazing resource specifically tailored for breaking into the GRC and SOC side of cybersecurity.</span></span>
                         </a>
                     </li>
@@ -246,25 +278,29 @@
                 <ul class="resource-list">
                     <li>
                         <a href="https://attack.mitre.org/" target="_blank" class="resource-link">
-                            <i class="fas fa-external-link-alt"></i> MITRE ATT&CK <span style="color: #ffbd2e; margin-left: 5px;">⭐ <span lang="pl">Polecam</span><span lang="en">Top Pick</span></span>
+                            <i class="fas fa-external-link-alt"></i>
+                            <span class="resource-name">MITRE ATT&CK <span class="top-pick">⭐ <span lang="pl">Polecam</span><span lang="en">Top Pick</span></span></span>
                             <span class="resource-desc"><span lang="pl">Globalna baza wiedzy o taktykach i technikach atakujących. Podstawa dla każdego analityka SOC przy mapowaniu zagrożeń.</span><span lang="en">The global knowledge base of adversary tactics and techniques. Essential for every SOC analyst to map threats.</span></span>
                         </a>
                     </li>
                     <li>
                         <a href="https://gchq.github.io/CyberChef/" target="_blank" class="resource-link">
-                            <i class="fas fa-external-link-alt"></i> CyberChef
+                            <i class="fas fa-external-link-alt"></i>
+                            <span class="resource-name">CyberChef</span>
                             <span class="resource-desc"><span lang="pl">„Cyfrowy scyzoryk”. Prosta aplikacja webowa do dekodowania, analizy i konwersji danych.</span><span lang="en">The "Cyber Swiss Army Knife". A simple web app for decoding, analyzing, and converting data.</span></span>
                         </a>
                     </li>
                     <li>
                         <a href="https://gtfobins.github.io/" target="_blank" class="resource-link">
-                            <i class="fas fa-external-link-alt"></i> GTFOBins & LOLBAS
+                            <i class="fas fa-external-link-alt"></i>
+                            <span class="resource-name">GTFOBins & LOLBAS</span>
                             <span class="resource-desc"><span lang="pl">Listy legalnych plików binarnych, które atakujący mogą wykorzystać do obejścia zabezpieczeń.</span><span lang="en">Curated lists of legitimate binaries that can be abused by attackers to bypass security restrictions.</span></span>
                         </a>
                     </li>
                     <li>
                         <a href="https://www.virustotal.com/" target="_blank" class="resource-link">
-                            <i class="fas fa-external-link-alt"></i> VirusTotal
+                            <i class="fas fa-external-link-alt"></i>
+                            <span class="resource-name">VirusTotal</span>
                             <span class="resource-desc"><span lang="pl">Analiza podejrzanych plików, domen, adresów IP i URL-i pod kątem malware i innych zagrożeń.</span><span lang="en">Analyze suspicious files, domains, IPs and URLs to detect malware and other breaches.</span></span>
                         </a>
                     </li>
@@ -280,19 +316,22 @@
                 <ul class="resource-list">
                     <li>
                         <a href="https://www.bleepingcomputer.com/" target="_blank" class="resource-link">
-                            <i class="fas fa-external-link-alt"></i> BleepingComputer <span style="color: #ffbd2e; margin-left: 5px;">⭐ <span lang="pl">Polecam</span><span lang="en">Top Pick</span></span>
+                            <i class="fas fa-external-link-alt"></i>
+                            <span class="resource-name">BleepingComputer <span class="top-pick">⭐ <span lang="pl">Polecam</span><span lang="en">Top Pick</span></span></span>
                             <span class="resource-desc"><span lang="pl">Najbardziej wiarygodne źródło aktualnych newsów o cyberbezpieczeństwie, ransomware i podatnościach.</span><span lang="en">The most reliable source for up-to-date cybersecurity news, ransomware tracking, and vulnerabilities.</span></span>
                         </a>
                     </li>
                     <li>
                         <a href="https://thehackernews.com/" target="_blank" class="resource-link">
-                            <i class="fas fa-external-link-alt"></i> The Hacker News
+                            <i class="fas fa-external-link-alt"></i>
+                            <span class="resource-name">The Hacker News</span>
                             <span class="resource-desc"><span lang="pl">Popularny serwis o cyberbezpieczeństwie: wycieki, malware i exploity.</span><span lang="en">Widely read cybersecurity news source covering breaches, malware, and exploits.</span></span>
                         </a>
                     </li>
                     <li>
                         <a href="https://krebsonsecurity.com/" target="_blank" class="resource-link">
-                            <i class="fas fa-external-link-alt"></i> Krebs on Security
+                            <i class="fas fa-external-link-alt"></i>
+                            <span class="resource-name">Krebs on Security</span>
                             <span class="resource-desc"><span lang="pl">Dogłębne dziennikarstwo śledcze Briana Krebsa o cyberprzestępczości i bezpieczeństwie.</span><span lang="en">In-depth investigative journalism by Brian Krebs focusing on cybercrime and security.</span></span>
                         </a>
                     </li>
