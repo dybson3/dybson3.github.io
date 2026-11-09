@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Tools
+category: tools
 permalink: /blog/tools/
 ---
+{% assign name = site.data.categories[page.category] %}
+<h1><span lang="pl">{{ name.pl }}</span><span lang="en">{{ name.en }}</span></h1>
 
-# Tools
-
-{% for post in site.categories.tools %}
-- [{{ post.title }}]({{ post.url }}) - {{ post.date | date: "%B %d, %Y" }}
+{% for post in site.categories[page.category] %}
+- [{{ post.title }}]({{ post.url }}) - {{ post.date | date: "%d.%m.%Y" }}
 {% endfor %}

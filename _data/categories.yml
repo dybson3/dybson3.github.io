@@ -1,0 +1,7 @@
+# Blog category names in both languages (used by blog.md and blog/*.md)
+concepts: { pl: Koncepcje, en: Concepts }
+networking: { pl: Sieci, en: Networking }
+operating-systems: { pl: Systemy operacyjne, en: Operating Systems }
+projects: { pl: Projekty, en: Projects }
+tools: { pl: Narzędzia, en: Tools }
+tutorials: { pl: Poradniki, en: Tutorials }

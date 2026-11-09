@@ -1196,3 +1196,62 @@ footer {
     padding: 15px 15px 15px 20px;
     border-radius: 0 8px 8px 0;
 }
+
+/* ===== Language switch (PL default / EN) — see assets/js/lang.js ===== */
+html[lang="pl"] [lang="en"],
+html[lang="en"] [lang="pl"] {
+    display: none !important;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.lang-switch {
+    display: inline-flex;
+    align-items: center;
+    padding: 3px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.75rem;
+    font-weight: 500;
+    line-height: 1;
+    color: var(--text-secondary);
+    transition: border-color 0.2s ease;
+}
+
+.lang-switch:hover {
+    border-color: var(--accent-color);
+}
+
+.lang-switch .lang-opt {
+    padding: 6px 9px;
+    border-radius: 999px;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+html[lang="pl"] .lang-switch [data-l="pl"],
+html[lang="en"] .lang-switch [data-l="en"] {
+    background: var(--accent-color);
+    color: #04121c;
+}
+
+.lang-note {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    border: 1px dashed rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+    padding: 0.6rem 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .nav-actions {
+        gap: 0.6rem;
+    }
+}

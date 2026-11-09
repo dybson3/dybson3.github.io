@@ -1,9 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.title | default: site.title }} | Bartosz Dybski</title>
+    {%- assign cat = site.data.categories[page.category] -%}
+    {%- if cat -%}
+        {%- assign title_pl = cat.pl -%}{%- assign title_en = cat.en -%}
+    {%- else -%}
+        {%- assign title_en = page.title | default: site.title -%}{%- assign title_pl = page.title_pl | default: title_en -%}
+    {%- endif %}
+    <title data-en-text="{{ title_en | escape }} | Bartosz Dybski">{{ title_pl | escape }} | Bartosz Dybski</title>
+    <script src="{{ '/assets/js/lang.js' | relative_url }}"></script>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,22 +26,32 @@
         <div class="glow glow-2"></div>
     </div>
 
-    <nav class="navbar">
-        <div class="nav-brand"><a href="{{ '/' | relative_url }}" style="color: inherit; text-decoration: none;">BD.</a></div>
-        <div class="nav-links">
-            <a href="{{ '/' | relative_url }}#about" class="nav-link">About</a>
-            <a href="{{ '/' | relative_url }}#experience" class="nav-link">Experience</a>
-            <a href="{{ '/' | relative_url }}#projects" class="nav-link">Projects</a>
-            <a href="{{ '/blog/' | relative_url }}" class="nav-btn primary-btn"><i class="fas fa-book"></i> Read My Blog</a>
-        </div>
-    </nav>
+    <header class="nav-wrapper">
+        <nav class="navbar">
+            <a href="/" class="nav-brand">BD<span class="brand-dot">.</span></a>
+            <div class="nav-actions">
+                <div class="nav-links">
+                    <a href="/#about" class="nav-link"><span lang="pl">O mnie</span><span lang="en">About</span></a>
+                    <a href="/#experience" class="nav-link"><span lang="pl">Doświadczenie</span><span lang="en">Experience</span></a>
+                    <a href="/#projects" class="nav-link"><span lang="pl">Projekty</span><span lang="en">Projects</span></a>
+                    <a href="/socials" class="nav-link">Socials</a>
+                    <a href="/blog" class="nav-btn primary-btn"><i class="fas fa-book"></i> <span lang="pl">Czytaj bloga</span><span lang="en">Read My Blog</span></a>
+                </div>
+                <button type="button" class="lang-switch" data-lang-switch><span class="lang-opt" data-l="pl">PL</span><span class="lang-opt" data-l="en">EN</span></button>
+                <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
+            </div>
+        </nav>
+    </header>
 
     <main class="container page-content glass-panel" style="padding: 2rem; margin-top: 2rem; margin-bottom: 2rem;">
+        {% if page.collection == "posts" %}
+        <p class="lang-note" lang="pl">🇬🇧 Ten wpis jest na razie dostępny tylko po angielsku.</p>
+        {% endif %}
         {{ content }}
     </main>
 
     <footer>
-        <p>&copy; 2026 Bartosz Dybski. Designed for Security.</p>
+        <p>&copy; 2026 Bartosz Dybski &middot; <span lang="pl">Zaprojektowane z myślą o bezpieczeństwie.</span><span lang="en">Designed for Security.</span></p>
     </footer>
 
     <script>
@@ -47,6 +64,18 @@
                 panel.style.setProperty('--mouse-y', `${y}px`);
             });
         });
+    </script>
+    <script>
+        // Mobile nav
+        (function () {
+            var toggle = document.querySelector('.nav-toggle');
+            var links = document.querySelector('.nav-links');
+            if (!toggle || !links) return;
+            toggle.addEventListener('click', function () {
+                var open = links.classList.toggle('open');
+                toggle.setAttribute('aria-expanded', open);
+            });
+        })();
     </script>
 </body>
 </html>

@@ -4,13 +4,20 @@ title: Blog
 permalink: /blog/
 ---
 
-# Blog Categories
+<h1><span lang="pl">Kategorie bloga</span><span lang="en">Blog Categories</span></h1>
+
+<p class="lang-note" lang="pl">🇬🇧 Wpisy na blogu są na razie dostępne tylko po angielsku.</p>
 
 <div class="categories-list">
     {% for category in site.categories %}
+    {% assign name = site.data.categories[category[0]] %}
     <a href="/blog/{{ category[0] | downcase }}/" class="category-card">
         <div class="category-content">
+            {% if name %}
+            <span class="category-name"><span lang="pl">{{ name.pl }}</span><span lang="en">{{ name.en }}</span></span>
+            {% else %}
             <span class="category-name">{{ category[0] | capitalize }}</span>
+            {% endif %}
         </div>
     </a>
     {% endfor %}

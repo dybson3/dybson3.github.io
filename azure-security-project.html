@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Azure Security Architecture & Zero Trust Implementation | Bartosz Dybski</title>
-    <meta name="description" content="A cloud security hands-on project demonstrating Zero Trust architecture, Least Privilege access control, and threat detection in Azure.">
+    <title data-en-text="Azure Security Architecture &amp; Zero Trust Implementation | Bartosz Dybski">Architektura bezpieczeństwa Azure i wdrożenie Zero Trust | Bartosz Dybski</title>
+    <meta name="description" content="Praktyczny projekt z bezpieczeństwa chmury: architektura Zero Trust, zasada najmniejszych uprawnień i wykrywanie zagrożeń w Azure." data-en-content="A cloud security hands-on project demonstrating Zero Trust architecture, Least Privilege access control, and threat detection in Azure.">
+    <script src="assets/js/lang.js"></script>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,22 +42,92 @@
         <div class="glow glow-2"></div>
     </div>
 
-    <nav class="navbar">
-        <div class="nav-brand">BD.</div>
-        <div class="nav-links">
-            <a href="index.html#about" class="nav-link">About</a>
-            <a href="index.html#experience" class="nav-link">Experience</a>
-            <a href="index.html#projects" class="nav-link" style="color: var(--text-primary);">Projects</a>
-            <a href="links.html" class="nav-link">Links</a>
-            <a href="/blog" class="nav-btn primary-btn"><i class="fas fa-book"></i> Read My Blog</a>
-        </div>
-    </nav>
+    <header class="nav-wrapper">
+        <nav class="navbar">
+            <a href="index.html" class="nav-brand">BD<span class="brand-dot">.</span></a>
+            <div class="nav-actions">
+                <div class="nav-links">
+                    <a href="index.html#about" class="nav-link"><span lang="pl">O mnie</span><span lang="en">About</span></a>
+                    <a href="index.html#experience" class="nav-link"><span lang="pl">Doświadczenie</span><span lang="en">Experience</span></a>
+                    <a href="index.html#projects" class="nav-link"><span lang="pl">Projekty</span><span lang="en">Projects</span></a>
+                    <a href="socials.html" class="nav-link">Socials</a>
+                    <a href="/blog" class="nav-btn primary-btn"><i class="fas fa-book"></i> <span lang="pl">Czytaj bloga</span><span lang="en">Read My Blog</span></a>
+                </div>
+                <button type="button" class="lang-switch" data-lang-switch><span class="lang-opt" data-l="pl">PL</span><span class="lang-opt" data-l="en">EN</span></button>
+                <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
+            </div>
+        </nav>
+    </header>
 
     <main class="container">
         <div class="project-detail-container">
-            <a href="index.html#projects" class="back-link"><i class="fas fa-arrow-left"></i> Back to Projects</a>
+            <a href="index.html#projects" class="back-link"><i class="fas fa-arrow-left"></i> <span lang="pl">Wróć do projektów</span><span lang="en">Back to Projects</span></a>
             
-            <div class="glass-panel section-padding page-content">
+            <div class="glass-panel section-padding page-content" lang="pl">
+                <h1>Architektura bezpieczeństwa Azure i wdrożenie Zero Trust</h1>
+                <p><em>Projekt portfolio do SC-500</em></p>
+
+                <h2>O projekcie</h2>
+                <p>Ten projekt z bezpieczeństwa chmury to praktyczne wdrożenie zagadnień wymaganych do certyfikacji Microsoft SC-500. Skupia się na zbudowaniu bezpiecznego i odpornego środowiska w Microsoft Azure, ściśle według <strong>architektury Zero Trust</strong> i <strong>zasady najmniejszych uprawnień</strong> (Least Privilege). Projekt pokazuje zabezpieczenia od początku do końca &mdash; od bezhasłowego uwierzytelniania aplikacji w chmurze po centralne rozwiązanie SIEM/SOAR do proaktywnego threat huntingu. Obejmuje też zaawansowaną ochronę danych na poziomie bazy danych oraz nową dziedzinę, jaką jest governance AI &mdash; z filtrami bezpieczeństwa treści dla modeli generatywnych.</p>
+                <figure style="text-align: center; margin: 2.5rem 0;">
+                    <img src="assets/images/Diagram%20Architektury.png" alt="Diagram architektury" style="box-shadow: 0 10px 30px rgba(0,0,0,0.5); display: inline-block;" onerror="this.style.display='none'">
+                    <figcaption style="color: var(--text-secondary); margin-top: 10px; font-size: 0.95rem; font-style: italic;">Rysunek 1: Ogólny diagram architektury całego środowiska laboratoryjnego</figcaption>
+                </figure>
+
+                <h2>Kluczowe komponenty architektury i wdrożenia</h2>
+
+                <h3>1. Zarządzanie tożsamością i dostępem (Managed Identities i RBAC)</h3>
+                <p>Silna weryfikacja tożsamości to jeden z filarów Zero Trust. Ta część skupia się na wyeliminowaniu zaszytych w kodzie poświadczeń i ścisłej kontroli dostępu do zasobów.</p>
+                <ul>
+                    <li><strong>Integracja z App Service:</strong> Skonfigurowałem System-Assigned Managed Identity dla Azure App Service. Dzięki temu aplikacja uwierzytelnia się do zasobów back-endowych bezpiecznie i bez haseł &mdash; bez przechowywania sekretów w kodzie czy plikach konfiguracyjnych. W ramach wdrożenia napisałem własną aplikację z funkcjami AI, która uwierzytelniła się do Azure Key Vault, odczytała i wyświetliła zapisany sekret. Aplikacja bezpiecznie połączyła się też z kontem Storage, żeby pobrać i wyświetlić informacje o pliku w prywatnym kontenerze.</li>
+                    <li><strong>Precyzyjna kontrola dostępu oparta na rolach (RBAC):</strong> Zastosowałem zasadę najmniejszych uprawnień, tak aby tożsamości miały tylko te uprawnienia, których faktycznie potrzebują.
+                        <ul>
+                            <li><strong>Bezpieczeństwo konta Storage:</strong> Przypisałem rolę <em>Storage Blob Data Reader</em> celowo na poziomie konkretnego kontenera, a nie całej subskrypcji czy konta Storage &mdash; co ogranicza zasięg szkód (blast radius) w razie przejęcia tożsamości.</li>
+                            <li><strong>Azure Key Vault:</strong> Przypisałem rolę <em>Key Vault Secrets Officer</em> wyłącznie na poziomie Key Vault, tworząc bezpieczne miejsce, w którym aplikacja może odczytywać klucze i sekrety oraz nimi zarządzać.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <figure style="text-align: center; margin: 2.5rem 0;">
+                    <img src="assets/images/App%20service%20ID%20proof.png" alt="Dowód działania App Service" style="box-shadow: 0 10px 30px rgba(0,0,0,0.5); display: inline-block;" onerror="this.style.display='none'">
+                    <figcaption style="color: var(--text-secondary); margin-top: 10px; font-size: 0.95rem; font-style: italic;">Rysunek 2: App Service pobiera sekrety i dane z bloba przy użyciu Managed Identity</figcaption>
+                </figure>
+
+                <h3>2. Operacje bezpieczeństwa i audyt (Microsoft Sentinel i SIEM)</h3>
+                <p>Bez widoczności nie da się wykrywać zagrożeń ani na nie reagować. Ten etap wdraża centralny monitoring bezpieczeństwa, który śledzi działania administracyjne i potencjalne próby nieautoryzowanego dostępu.</p>
+                <ul>
+                    <li><strong>Log Analytics Workspace:</strong> Utworzyłem centralny Log Analytics Workspace na poziomie subskrypcji jako główne repozytorium wszystkich logów bezpieczeństwa i operacyjnych z całego środowiska Azure.</li>
+                    <li><strong>Integracja z Microsoft Sentinel:</strong> Wdrożyłem i skonfigurowałem Microsoft Sentinel, który zapewnia natywne dla chmury funkcje SIEM (Security Information and Event Management) i SOAR (Security Orchestration, Automation, and Response).</li>
+                    <li><strong>Data Connectors i remediacja polityk:</strong> Podłączyłem logi Azure Activity. Za pomocą zadań remediacji Azure Policy wymusiłem ustawienia diagnostyczne na dużą skalę, co zapewnia ciągły monitoring zdarzeń control plane. Konfiguracja jest nastawiona na wykrywanie nieautoryzowanych działań RBAC, np. nieoczekiwanych błędów <code>HTTP 403 / AuthorizationFailed</code>, które mogą wskazywać na lateral movement lub próbę eskalacji uprawnień.</li>
+                </ul>
+
+                <h3>3. Ochrona danych i prywatność (Azure SQL Database)</h3>
+                <p>Ochrona wrażliwych danych w spoczynku i w transmisji to kluczowy wymóg. Ten komponent pokazuje, jak zabezpieczyć relacyjną bazę danych przed nieautoryzowanym wyciekiem danych.</p>
+                <ul>
+                    <li><strong>Zakres dostępu i mapowanie w Entra ID:</strong> Utworzyłem dedykowanego użytkownika bazy danych (<code>test_user</code>) zmapowanego przez Microsoft Entra ID. Użytkownik dostał wyłącznie dostęp do odczytu (<code>db_datareader</code>), żeby nie mógł modyfikować danych.</li>
+                    <li><strong>Dynamic Data Masking (DDM):</strong> Wdrożyłem natywne reguły Dynamic Data Masking w Azure SQL, które w czasie rzeczywistym maskują wrażliwe kolumny (np. numery kart kredytowych, adresy e-mail, dane osobowe). Dzięki temu nawet użytkownik z prawem odczytu nie widzi wrażliwych danych jawnym tekstem, jeśli nie ma do tego wyraźnego uprawnienia.</li>
+                    <li><strong>Weryfikacja i testy:</strong> Przetestowałem zapytania SQL i potwierdziłem, że <code>test_user</code> może odpytywać tabele do celów analitycznych, podczas gdy DDM dynamicznie maskuje wrażliwe dane &mdash; skutecznie zapobiegając wyciekowi.</li>
+                </ul>
+                <figure style="text-align: center; margin: 2.5rem 0;">
+                    <img src="assets/images/TestUserDynamicDataMasking.png" alt="Dowód działania Dynamic Data Masking" style="box-shadow: 0 10px 30px rgba(0,0,0,0.5); display: inline-block;" onerror="this.style.display='none'">
+                    <figcaption style="color: var(--text-secondary); margin-top: 10px; font-size: 0.95rem; font-style: italic;">Rysunek 3: Zapytanie w Azure SQL pokazujące zamaskowane numery kart kredytowych dla test_user</figcaption>
+                </figure>
+
+                <h3>4. Governance AI i moderacja treści (Azure AI Foundry)</h3>
+                <p>Wraz z rosnącym wykorzystaniem AI zabezpieczenie procesów opartych na AI staje się kluczowe. Ostatnia część dotyczy ryzyk związanych z generatywną AI, takich jak prompt injection i szkodliwe odpowiedzi.</p>
+                <ul>
+                    <li><strong>Azure AI Content Safety:</strong> Wdrożyłem i skonfigurowałem zaawansowane filtry bezpieczeństwa treści w Azure AI Foundry. Tworzą one warstwę governance, która automatycznie wykrywa, monitoruje i blokuje szkodliwe, toksyczne lub złośliwe dane wejściowe (np. próby jailbreaku) i odpowiedzi w aplikacjach opartych na AI &mdash; zgodnie z zasadami odpowiedzialnej AI.</li>
+                </ul>
+                <figure style="text-align: center; margin: 2.5rem 0;">
+                    <img src="assets/images/AIJailbreak.png" alt="Wykrycie jailbreaku przez Azure AI Content Safety" style="box-shadow: 0 10px 30px rgba(0,0,0,0.5); display: inline-block;" onerror="this.style.display='none'">
+                    <figcaption style="color: var(--text-secondary); margin-top: 10px; font-size: 0.95rem; font-style: italic;">Rysunek 4: Azure AI Foundry wykrywa i blokuje atak typu jailbreak</figcaption>
+                </figure>
+
+                <hr style="border-color: rgba(255,255,255,0.1); margin: 3rem 0;">
+
+                <h2>Podsumowanie</h2>
+                <p>Zbudowanie tego laboratorium pozwoliło mi połączyć teorię z praktyką. Mogłem samodzielnie wdrożyć i sprawdzić wiedzę zdobytą podczas nauki do egzaminu <strong>Microsoft SC-500 (Azure Security Engineer)</strong>, co utrwaliło moją umiejętność projektowania i wdrażania solidnych zabezpieczeń w działającym środowisku chmurowym.</p>
+            </div>
+            <div class="glass-panel section-padding page-content" lang="en">
                 <h1>Azure Security Architecture & Zero Trust Implementation</h1>
                 <p><em>SC-500 Portfolio Project</em></p>
 
@@ -124,7 +195,19 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 Bartosz Dybski. Designed for Security.</p>
+        <p>&copy; 2026 Bartosz Dybski &middot; <span lang="pl">Zaprojektowane z myślą o bezpieczeństwie.</span><span lang="en">Designed for Security.</span></p>
     </footer>
+    <script>
+        // Mobile nav
+        (function () {
+            var toggle = document.querySelector('.nav-toggle');
+            var links = document.querySelector('.nav-links');
+            if (!toggle || !links) return;
+            toggle.addEventListener('click', function () {
+                var open = links.classList.toggle('open');
+                toggle.setAttribute('aria-expanded', open);
+            });
+        })();
+    </script>
 </body>
 </html>
